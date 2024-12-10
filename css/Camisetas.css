@@ -7,6 +7,8 @@
 		}
 		header {
 			border: 1px dotted black;
+			background-color: #745834;
+			color: #ffffff;
 			margin: 1.968503937007874%; 
 			padding: 1.968503937007874%;
 			width: 94,161958568738229755%;
@@ -45,27 +47,27 @@
 		}
 		#camiseta1 {
 			grid-row: 1/2;
-			grid-column: 1/span 3;
+			grid-column: 1/span 5;
 			border: 1px dotted black;
 		}
 		#camiseta2 {
 			grid-row: 1/2;
-			grid-column: 4/span 3;
+			grid-column: 6/span 5;
 			border: 1px dotted black;
 		}
 		#camiseta3 {
 			grid-row: 1/2;
-			grid-column: 7/span 3;
+			grid-column: 11/span 5;
 			border: 1px dotted black;
 		}
 		#camiseta4 {
 			grid-row: 1/2;
-			grid-column: 10/span 3;
+			grid-column: 17/span 5;
 			border: 1px dotted black;
 		}
 		#camiseta5 {
 			grid-row: 1/2;
-			grid-column: 13/span 3;
+			grid-column: 23/span 5;
 			border: 1px dotted black;
 		}
 		main section div{
@@ -88,27 +90,27 @@
 			justify-content: space-evenly;
 			text-align: center;
 		}
-		#camiseta1 {
+		#camiseta6 {
 			grid-row: 1/2;
 			grid-column: 1/span 3;
 			border: 1px dotted black;
 		}
-		#camiseta2 {
+		#camiseta7 {
 			grid-row: 1/2;
 			grid-column: 4/span 3;
 			border: 1px dotted black;
 		}
-		#camiseta3 {
+		#camiseta8 {
 			grid-row: 1/2;
 			grid-column: 7/span 3;
 			border: 1px dotted black;
 		}
-		#camiseta4 {
+		#camiseta9 {
 			grid-row: 1/2;
 			grid-column: 10/span 3;
 			border: 1px dotted black;
 		}
-		#camiseta5 {
+		#camiseta10 {
 			grid-row: 1/2;
 			grid-column: 13/span 3;
 			border: 1px dotted black;
@@ -119,65 +121,62 @@
 		aside section div img{
 			max-width: 100%;
 		}
-		footer {
-			border: 1px dashed black;
-			margin: 1.968503937007874%; 
-			padding: 1.968503937007874%;
-			width: 94,161958568738229755%;;
-		}
+		
 		@media only screen and (max-width: 767px) {
 			main section{
 				grid-template: repeat(10,auto)/1fr;
 			}
-			#eskaintza1 {
+			#camiseta1 {
 				grid-row: 1/2;
 				grid-column: 1/2;
 			}
-			#eskaintza2 {
+			#camiseta2 {
 				grid-row: 2/3;
 				grid-column: 1/2
 			}
-			#eskaintza3 {
+			#camiseta3 {
 				grid-row: 3/4;
 				grid-column: 1/2;
 			}
-			#eskaintza4 {
+			#camiseta4 {
 				grid-row: 4/5;
 				grid-column: 1/2;
 			}
-			#eskaintza5 {
+			#camiseta5 {
 				grid-row: 5/6;
 				grid-column: 1/2;
 			}
-			}
-			main section div img{
-				max-width: 150px;
-			}
+		}
+		main section div img{
+			max-width: 150px;
+		}
+		@media only screen and (max-width: 767px) {
 			aside section{
 				grid-template: repeat(10,auto)/1fr;
-			
-			#eskaintza1 {
+			}
+			#camiseta6 {
 				grid-row: 6/7;
 				grid-column: 1/2;
 			}
-			#eskaintza2 {
+			#camiseta7 {
 				grid-row: 7/8;
-				grid-column: 1/2;
+				grid-column: 1/2
 			}
-			#eskaintza3 {
+			#camiseta8 {
 				grid-row: 8/9;
 				grid-column: 1/2;
 			}
-			#eskaintza4 {
+			#camiseta9 {
 				grid-row: 9/10;
 				grid-column: 1/2;
 			}
-			#eskaintza5 {
+			#camiseta10 {
 				grid-row: 10/11;
 				grid-column: 1/2;
 			}
-			aside section div img{
-				max-width: 150px;
-			}
-			}
+		}
+		aside section div img{
+			max-width: 150px;
+		}
+			
 		

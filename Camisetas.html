@@ -1,14 +1,206 @@
 <!doctype html>
 <html>
 	<head>
-		<title></title>
+		<title>Camisetas</title>
 		<link rel="stylesheet" href="css/Camisetas.css">
 		<meta name="" content="width=device-width, initial scale=1.0">
 	</head>
+	<style>
+		* {margin: 0; padding: 0;} 
+		body {
+			border: 1px dotted black;
+			max-width: 1062x;
+			margin-left: auto;
+			margin-right: auto;
+		}
+		header {
+			border: 1px dotted black;
+			background-color: #723228;
+			color: #ffffff;
+			margin: 1.968503937007874%; 
+			padding: 1.968503937007874%;
+			width: 94,161958568738229755%;
+		}
+		eader img{
+			width: 230px;
+			height: 70px;
+		}
+		h1{
+			display: inline;		
+		}
+		nav {
+			margin: 1.968503937007874%; 
+			padding: 1.968503937007874%;
+			width: 94,161958568738229755%;
+			background-color: #723228;
+			color: #ffffff;
+		}
+		nav li {
+			border: 1px dotted black;
+			display: inline;
+			margin: 0.656167979002624%;
+		}
+		main {
+			border: 1px dotted black;
+			margin: 1.968503937007874%; 
+			padding: 1.968503937007874%;
+			width: 94,161958568738229755%;;
+		}
+		main section{
+			display: grid;
+			grid-template: auto auto / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+			row-gap: 1.968503937007874%;
+			column-gap: 1.968503937007874%;
+			justify-content: space-evenly;
+			text-align: center;
+		}
+		#camiseta1 {
+			grid-row: 1/2;
+			grid-column: 1/span 5;
+			border: 1px dotted black;
+		}
+		#camiseta2 {
+			grid-row: 1/2;
+			grid-column: 6/span 5;
+			border: 1px dotted black;
+		}
+		#camiseta3 {
+			grid-row: 1/2;
+			grid-column: 11/span 5;
+			border: 1px dotted black;
+		}
+		#camiseta4 {
+			grid-row: 1/2;
+			grid-column: 17/span 5;
+			border: 1px dotted black;
+		}
+		#camiseta5 {
+			grid-row: 1/2;
+			grid-column: 23/span 5;
+			border: 1px dotted black;
+		}
+		main section div{
+			border: 1px dotted black;
+		}
+		main section div img{
+			max-width: 100%;
+		}
+		aside {
+			border: 1px dotted black;
+			margin: 1.968503937007874%; 
+			padding: 1.968503937007874%;
+			width: 94,161958568738229755%;;
+		}
+		aside section{
+			display: grid;
+			grid-template: auto auto / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+			row-gap: 1.968503937007874%;
+			column-gap: 1.968503937007874%;
+			justify-content: space-evenly;
+			text-align: center;
+		}
+		#camiseta6 {
+			grid-row: 1/2;
+			grid-column: 1/span 3;
+			border: 1px dotted black;
+		}
+		#camiseta7 {
+			grid-row: 1/2;
+			grid-column: 4/span 3;
+			border: 1px dotted black;
+		}
+		#camiseta8 {
+			grid-row: 1/2;
+			grid-column: 7/span 3;
+			border: 1px dotted black;
+		}
+		#camiseta9 {
+			grid-row: 1/2;
+			grid-column: 10/span 3;
+			border: 1px dotted black;
+		}
+		#camiseta10 {
+			grid-row: 1/2;
+			grid-column: 13/span 3;
+			border: 1px dotted black;
+		}
+		aside section div{
+			border: 1px dotted black;
+		}
+		aside section div img{
+			max-width: 100%;
+		}
+		footer{
+			border: 1px dotted black;
+			background-color: #723228;
+			color: #ffffff;
+			margin: 1.968503937007874%; 
+			padding: 1.968503937007874%;
+			width: 94,161958568738229755%;
+			clear: both;
+		}
+		
+		@media only screen and (max-width: 767px) {
+			main section{
+				grid-template: repeat(10,auto)/1fr;
+			}
+			#camiseta1 {
+				grid-row: 1/2;
+				grid-column: 1/2;
+			}
+			#camiseta2 {
+				grid-row: 2/3;
+				grid-column: 1/2
+			}
+			#camiseta3 {
+				grid-row: 3/4;
+				grid-column: 1/2;
+			}
+			#camiseta4 {
+				grid-row: 4/5;
+				grid-column: 1/2;
+			}
+			#camiseta5 {
+				grid-row: 5/6;
+				grid-column: 1/2;
+			}
+		}
+		main section div img{
+			max-width: 150px;
+		}
+		@media only screen and (max-width: 767px) {
+			aside section{
+				grid-template: repeat(10,auto)/1fr;
+			}
+			#camiseta6 {
+				grid-row: 6/7;
+				grid-column: 1/2;
+			}
+			#camiseta7 {
+				grid-row: 7/8;
+				grid-column: 1/2
+			}
+			#camiseta8 {
+				grid-row: 8/9;
+				grid-column: 1/2;
+			}
+			#camiseta9 {
+				grid-row: 9/10;
+				grid-column: 1/2;
+			}
+			#camiseta10 {
+				grid-row: 10/11;
+				grid-column: 1/2;
+			}
+		}
+		aside section div img{
+			max-width: 150px;
+		}
+	</style>
 	<body>
 		<header>
 			<img src="img/logoa.jpg" alt="logoa">
-			<h1></h1>
+			<h1>RUN & GO</h1>
 		</header>
 		<nav>
 			<ul>
@@ -17,10 +209,8 @@
 				<li><a href="camisetasCortas.html">Camisetas</a></li>
 				<li><a href="mallasLargas.html">Mallas</a></li>
 				<li><a href="zapatillas.html">Zapatillas</a></li>
-
-				<li><a href="clavos.html">Clavos</a></li>
-				<li><a href="relojes.html">Relojes</a></li>
-
+				<li><a href="sudaderaChubasquero.html">Sudaderas y Chubasqueros</a></li>
+				<li><a href="accesorios.html">Accesorios</a></li>
 				<li><a href="tuCarrito.html">Tu Carrito</a></li>
 			</ul>
 		</nav>
@@ -39,7 +229,7 @@
 				</div>
 				<div id="camiseta3">
 					<img src="img/main_hk5633_01_laydown_661f.png" alt="Camiseta Adidas"><br>
-                    Adidas adizero Speed Tee<br>
+                    Adidas adizero Speed Tee<br>;
 				</div>
 				<div id="camiseta4">
 					<img src="img/1-aee8c6fb.png" alt="Camiseta Nike"><br>
@@ -52,30 +242,30 @@
 			</section>
 		</main>
 		<aside>
-			<h4>Camisetas de tirantes</h4>
+			<h3>Camisetas de tirantes</h3>
 			<section>
-				<div id="camiseta1">
+				<div id="camiseta6">
 					<img src="img/puma_525057-01_b2b_01_puma__pum-525057-01__imagefront.png" alt="Camiseta PUMA"><br>
 					RUN ULTRASPUN<br>
-				<div id="camiseta2">
+				</div>
+				<div id="camiseta7">
 					<img src="img/running-adidas-adizero-running-singlet-azul.png" alt="Camiseta Adidas"><br>
                  	Adizero Running<br>
 				</div>
-				<div id="camiseta3">
+				<div id="camiseta8">
 					<img src="img/121600-0496_b1_.png"><br>
                 	ASICS SINGLET<br>
 				</div>
-				<div id="camiseta4">
+				<div id="camiseta9">
 					<img src="img/102754.067_1.png"><br>
 					JOMA ELITE IX TANK<br>
 				</div>
-				<div id="camiseta5">
+				<div id="camiseta10">
 					<img src="img/892851-010-phsfh001-1000.png" alt="Camiseta Nike"><br>
 					RUNNING NIKE AEROSWIFT<br>
 				</div>
 			</Section>
 		</aside>
-		
 		<footer>
 			<p>&copy; 2024 </p>
 		</footer>
