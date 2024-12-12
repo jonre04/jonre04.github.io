@@ -2,173 +2,22 @@
 <html>
 	<head>
 		<title></title>
-		<link rel="stylesheet" href="css/k.css">
-		<meta name="viewport"" content="width=device-width, initial scale=1.0">
+		<link rel="stylesheet" href="css/catalogo.css">
+		<meta name="viewport" content="width=device-width, initial scale=1.0">
 	</head>
-	<style>
-		* {margin: 0; padding: 0;} 
-		
-		body {
-			border: 1px dotted black;
-			max-width: 1062x;
-			margin-left: auto;
-			margin-right: auto;
-
-		}
-		header {
-			border: 1px dotted black;
-			background-color: #732420;
-  			color: #ffffff;
-			margin: 1.968503937007874%; 
-			padding: 1.968503937007874%;
-			width: 94,161958568738229755%;
-		}
-		header img{
-			width: 230px;
-			height: 70px;
-		}
-		h1{
-			display: inline;		
-		}
-		nav {
-			border: 1px dotted black;
-			margin: 1.968503937007874%; 
-			padding: 1.968503937007874%;
-			width: 94,161958568738229755%;
-		}
-		nav li {
-			border: 1px dotted black;
-			display: inline;
-			margin: 0.656167979002624%;
-		}
-		main {
-			border: 1px dotted black;
-			margin: 1.968503937007874%; 
-			padding: 1.968503937007874%;
-			width: 94,161958568738229755%;;
-		}
-		main section{
-			display: grid;
-			grid-template: auto auto / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-			row-gap: 1.968503937007874%;
-			column-gap: 1.968503937007874%;
-			justify-content: space-evenly;
-			text-align: center;
-		}
-		#catalogo1 {
-			grid-row: 1/2;
-			grid-column: 1/span 5;
-			border: 1px dotted black;
-		}
-		#catalogo2 {
-			grid-row: 1/2;
-			grid-column: 6/span 5;
-			border: 1px dotted black;
-		}
-		#catalogo3 {
-			grid-row: 1/2;
-			grid-column: 11/span 5;
-			border: 1px dotted black;
-		}
-		#catalogo4 {
-			grid-row: 1/2;
-			grid-column: 17/span 5;
-			border: 1px dotted black;
-		}
-		#catalogo5 {
-			grid-row: 1/2;
-			grid-column: 1/span 4;
-			border: 1px dotted black;
-		}
-		#catalogo6 {
-			grid-row: 1/2;
-			grid-column: 5/span 4;
-			border: 1px dotted black;
-		}
-		#catalogo7 {
-			grid-row: 1/2;
-			grid-column: 9/span 4;
-			border: 1px dotted black;
-		}
-		#catalogo8 {
-			grid-row: 1/2;
-			grid-column: 13/span 4;
-			border: 1px dotted black;
-		}
-		#catalogo9 {
-			grid-row: 1/2;
-			grid-column: 17/span 4;
-			border: 1px dotted black;
-		}
-		main section div{
-			border: 1px dotted black;
-		}
-		main section div img{
-			max-width: 100%;
-		}
-		footer {
-			border: 1px dashed black;
-			background-color: #732420;
-			color: #ffffff;
-			margin: 1.968503937007874%; 
-			padding: 1.968503937007874%;
-			width: 94,161958568738229755%;;
-		}
-		@media only screen and (max-width: 767px) {
-			main section{
-				grid-template: repeat(10,auto)/1fr;
-			}
-			#catalogo1 {
-				grid-row: 1/2;
-				grid-column: 1/2;
-			}
-			#catalogo2 {
-				grid-row: 2/3;
-				grid-column: 1/2
-			}
-			#catalogo3 {
-				grid-row: 3/4;
-				grid-column: 1/2;
-			}
-			#catalogo4 {
-				grid-row: 4/5;
-				grid-column: 1/2;
-			}
-			#catalogo5 {
-				grid-row: 5/6;
-				grid-column: 1/2;
-			}
-			#catalogo6 {
-				grid-row: 6/7;
-				grid-column: 1/2;
-			}
-			#catalogo7 {
-				grid-row: 7/8;
-				grid-column: 1/2;
-			}
-			#catalogo8 {
-				grid-row: 8/9;
-				grid-column: 1/2;
-			}
-			#catalogo8 {
-				grid-row: 9/10;
-				grid-column: 1/2;
-			}
-		}
-		main section div img{
-			max-width: 150px;
-		}
-
-	</style>
 	<body>
 		<header>
-			<img src="img/logoa.jpg" alt="logoa">
+			<img src="img/logoa.png" alt="logoa">
 			<h1>RUN & GO</h1>
 		</header>
+		<div class="respmenu">
+			<input type="checkbox">
+			<i class="fas fa-bars"></i>
+			<i class="fas fa-times"></i>
 		<nav>
 			<ul>
 				<li><a href="index.html">Inicio</a></li>
-				<li><a href="index.html">Catalogo</a></li>
+				<li><a href="catalogo.html">Catalogo</a></li>
 				<li><a href="camisetasCortas.html">Camisetas</a></li>
 				<li><a href="mallasLargas.html">Mallas</a></li>
 				<li><a href="zapatillas.html">Zapatillas</a></li>
@@ -177,6 +26,7 @@
 				<li><a href="tuCarrito.html">Tu Carrito</a></li>
 			</ul>
 		</nav>
+		</div>
 		<main>
 			<h2>Catalogo</h2>
 			<p></p>
@@ -186,35 +36,36 @@
                     Camisetas cortas<br>
 				</div>
 				<div id="catalogo2">
-					<img src="img/puma_525057-01_b2b_01_puma__pum-525057-01__imagefront.png" alt="Camiseta tirantes"><br>
+					<img src="img/121600-0496_b1_.png" alt="Camiseta tirantes"><br>
                     Camisetas de tirantes<br>
 				</div>
 				<div id="catalogo3">
-					<img src="" alt="Mallas larga"><br>
+					<img src="img/ua-1361586-001_001.png" alt="Mallas larga"><br>
                     Mallas largas<br>
 				</div>
 				<div id="catalogo4">
-					<img src="img/Mallas_cortas_Training_Essentials_High-Waisted_3_bandas_Negro_HK9964_01_laydown_1.png" alt="Mallas corta"><br>
+					<img src="img/Training_Essentials_High-Waisted_3_bandas_Negro_HK9964_01_laydown_1.png" alt="Mallas corta"><br>
                     Mallas cortas<br>
 				</div>
 				<div id="catalogo5">
-					<img src="img/"><br>
+					<img src="img/1013A124_401_SR_RT_GLB.png"><br>
                     Zapatillas deportivas<br>
 				</div>
 				<div id="catalogo6">
-					<img src="img/"><br>
+					<img src="img/Zapatilla_Adizero_Finesse_Negro_GY8394_02_standard_hover.png"><br>
                     Zapatillas de clavos<br>
 				</div>
 				<div id="catalogo7">
-					<img src="img/" alt=""><br>
+					<img src="img/IS-CJ5705-010-1.png" alt="Sudadera"><br>
                     Sudaderas<br>
 				</div>
 				<div id="catalogo8">
-					<img src="img/" alt=""><br>
+					<img src="img/chubasquero-correr-lc1043600-0-m-bonattiracewpjkt-poseidon-run-jpg-cq5dam-web-1200-1200-1554723230.png" alt="Chubasquero"><br>
                     Chubasqueros<br>
 				</div>
 				<div id="catalogo9">
-					<img src="img/"><br>
+					<img src="img/1673365857-41HKbv4BqkL._SL500_.png" alt="Reloj"><br>
+					<img src="img/SIZE-Spikes.png" alt="Clavos"><br>
                     Accesorios<br>
 			</Section>
 		</main>

@@ -7,24 +7,25 @@
 		}
 		header {
 			border: 1px dotted black;
-			background-color: #745834;
+			background-color: #723228;
 			color: #ffffff;
 			margin: 1.968503937007874%; 
 			padding: 1.968503937007874%;
 			width: 94,161958568738229755%;
 		}
 		header img{
-		width: 230px;
-		height: 70px;
+			width: 230px;
+			height: 70px;
 		}
 		h1{
 			display: inline;		
 		}
 		nav {
-			border: 1px dotted black;
 			margin: 1.968503937007874%; 
 			padding: 1.968503937007874%;
 			width: 94,161958568738229755%;
+			background-color: #723228;
+			color: #ffffff;
 		}
 		nav li {
 			border: 1px dotted black;
@@ -37,6 +38,10 @@
 			padding: 1.968503937007874%;
 			width: 94,161958568738229755%;;
 		}
+	
+		main h3{
+			margin: 0.656167979002624%;
+		}
 		main section{
 			display: grid;
 			grid-template: auto auto / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
@@ -47,30 +52,27 @@
 		}
 		#camiseta1 {
 			grid-row: 1/2;
-			grid-column: 1/span 5;
+			grid-column: 1/span 3;
 			border: 1px dotted black;
 		}
 		#camiseta2 {
 			grid-row: 1/2;
-			grid-column: 6/span 5;
+			grid-column: 4/span 3;
 			border: 1px dotted black;
 		}
 		#camiseta3 {
 			grid-row: 1/2;
-			grid-column: 11/span 5;
+			grid-column: 7/span 3;
 			border: 1px dotted black;
 		}
 		#camiseta4 {
 			grid-row: 1/2;
-			grid-column: 17/span 5;
+			grid-column: 10/span 3;
 			border: 1px dotted black;
 		}
 		#camiseta5 {
 			grid-row: 1/2;
-			grid-column: 23/span 5;
-			border: 1px dotted black;
-		}
-		main section div{
+			grid-column: 13/span 3;
 			border: 1px dotted black;
 		}
 		main section div img{
@@ -81,6 +83,10 @@
 			margin: 1.968503937007874%; 
 			padding: 1.968503937007874%;
 			width: 94,161958568738229755%;;
+		}
+	
+		aside h3{
+			margin: 0.656167979002624%;
 		}
 		aside section{
 			display: grid;
@@ -115,11 +121,17 @@
 			grid-column: 13/span 3;
 			border: 1px dotted black;
 		}
-		aside section div{
-			border: 1px dotted black;
-		}
 		aside section div img{
 			max-width: 100%;
+		}
+		footer{
+			border: 1px dotted black;
+			background-color: #723228;
+			color: #ffffff;
+			margin: 1.968503937007874%; 
+			padding: 1.968503937007874%;
+			width: 94,161958568738229755%;
+			clear: both;
 		}
 		
 		@media only screen and (max-width: 767px) {
@@ -148,7 +160,7 @@
 			}
 		}
 		main section div img{
-			max-width: 150px;
+			max-width: 200px;
 		}
 		@media only screen and (max-width: 767px) {
 			aside section{
@@ -176,7 +188,5 @@
 			}
 		}
 		aside section div img{
-			max-width: 150px;
+			max-width: 200px;
 		}
-			
-		

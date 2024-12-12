@@ -1,24 +1,11 @@
-<!DOCTYPE html>
-<html>
-  <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-  * {box-sizing: border-box;}
-  .row::after {
-    content: "";
-    clear: both;
-    display: table;
+* {box-sizing: border-box;}
+  .row {
+    display: flex;
+    flex-grow: row wrap;
   }  
-
-  [class*="col-"] {
-    float: left;
-    padding: 15px;
-  }
-
   html {
     font-family: "Lucida Sans", sans-serif;
   }
-
   .header {
     background-color: #723228;
     color: #ffffff;
@@ -95,46 +82,3 @@
     .col-11 {width: 91.66%;}
     .col-12 {width: 100%;}
   }
-  </style>
-  </head>
-  <body>
-  <div class="header">
-    <h1>Run & Go</h1>
-  </div>
-
-  <div class="row">
-    <div class="col-3 col-s-3 menu">
-      <ul>
-        <li>Inicio</li>
-        <li>Catalogo</li>
-        <li>Camisetas</li>
-        <li>Mallas</li>
-        <li>Zapatillas</li>
-        <li>Sudaderas y Chubasqueros</li>
-        <li>Accesorio</li>
-        <li>Tu Carrito</li>
-      </ul>
-    </div>
-
-    <div class="col-6 col-s-9">
-      <h1></h1>
-      <p>.</p>
-    </div>
-
-    <div class="col-3 col-s-12">
-      <div class="aside">
-        <h2>What?</h2>
-        <p></p>
-        <h2>Where?</h2>
-        <p></p>
-        <h2>How?</h2>
-        <p></p>
-      </div>
-    </div>
-  </div>
-
-  <div class="footer">
-    <p>&copy; @2024 Run&GO</p>
-  </div>
-  </body>
-</html>
