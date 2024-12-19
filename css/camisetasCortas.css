@@ -7,7 +7,7 @@
 		}
 		header {
 			border: 1px dotted black;
-			background-color: #723228;
+			background-color: #f99456;
 			color: #ffffff;
 			margin: 1.968503937007874%; 
 			padding: 1.968503937007874%;
@@ -35,7 +35,7 @@
 		nav ul {
 			margin: 1.968503937007874%; 
 			padding: 1.968503937007874%;
-			background-color: #723228;
+			background-color: #f99456;
 			list-style: none;
 			display: flex;
 		}
@@ -70,81 +70,49 @@
 		}
 		#camiseta1 {
 			grid-row: 1/2;
-			grid-column: 1/span 3;
+			grid-column: 1/span 4;
 			border: 1px dotted black;
 		}
 		#camiseta2 {
 			grid-row: 1/2;
-			grid-column: 4/span 3;
+			grid-column: 5/span 4;
 			border: 1px dotted black;
 		}
 		#camiseta3 {
 			grid-row: 1/2;
-			grid-column: 7/span 3;
+			grid-column: 9/span 4;
 			border: 1px dotted black;
 		}
 		#camiseta4 {
-			grid-row: 1/2;
-			grid-column: 10/span 3;
+			grid-row: 2/3;
+			grid-column: 3/span 4;
 			border: 1px dotted black;
 		}
 		#camiseta5 {
-			grid-row: 1/2;
-			grid-column: 13/span 3;
+			grid-row: 2/3;
+			grid-column: 7/span 4;
 			border: 1px dotted black;
 		}
 		main section div img{
 			max-width: 100%;
 		}
-		aside {
-			border: 1px dotted black;
-			margin: 1.968503937007874%; 
-			padding: 1.968503937007874%;
-			width: 94,161958568738229755%;;
+		main section div button{
+			width: 100%;
+			padding: 10px;
+			background-color: #f99456;
+			color: white;
+			border: none;
+			border-radius: 5px;
+			font-size: 1rem;
+			cursor: pointer;
+			margin-top: 10px;
 		}
-	
-		aside h3{
-			margin: 0.656167979002624%;
-		}
-		aside section{
-			display: grid;
-			grid-template: auto auto / 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-			row-gap: 1.968503937007874%;
-			column-gap: 1.968503937007874%;
-			justify-content: space-evenly;
-			text-align: center;
-		}
-		#camiseta6 {
-			grid-row: 1/2;
-			grid-column: 1/span 3;
-			border: 1px dotted black;
-		}
-		#camiseta7 {
-			grid-row: 1/2;
-			grid-column: 4/span 3;
-			border: 1px dotted black;
-		}
-		#camiseta8 {
-			grid-row: 1/2;
-			grid-column: 7/span 3;
-			border: 1px dotted black;
-		}
-		#camiseta9 {
-			grid-row: 1/2;
-			grid-column: 10/span 3;
-			border: 1px dotted black;
-		}
-		#camiseta10 {
-			grid-row: 1/2;
-			grid-column: 13/span 3;
-			border: 1px dotted black;
-		}
-		aside section div img{
-			max-width: 100%;
-		}
+		button:hover {
+			background-color: #f99456;
+		}	
 		footer{
 			border: 1px dotted black;
-			background-color: #723228;
+			background-color: #f99456;
 			color: #ffffff;
 			margin: 1.968503937007874%; 
 			padding: 1.968503937007874%;
@@ -219,33 +187,5 @@
 			}
 		}
 		main section div img{
-			max-width: 200px;
-		}
-		@media only screen and (max-width: 767px) {
-			aside section{
-				grid-template: repeat(10,auto)/1fr;
-			}
-			#camiseta6 {
-				grid-row: 6/7;
-				grid-column: 1/2;
-			}
-			#camiseta7 {
-				grid-row: 7/8;
-				grid-column: 1/2
-			}
-			#camiseta8 {
-				grid-row: 8/9;
-				grid-column: 1/2;
-			}
-			#camiseta9 {
-				grid-row: 9/10;
-				grid-column: 1/2;
-			}
-			#camiseta10 {
-				grid-row: 10/11;
-				grid-column: 1/2;
-			}
-		}
-		aside section div img{
 			max-width: 200px;
 		}

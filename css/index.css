@@ -1,5 +1,16 @@
  * {box-sizing: border-box;}
-  .row::after {
+
+body {
+  font-family: Arial, sans-serif;
+  color: #fff; 
+  background-image: url(/img/lineas-meta-firmar-pista-atletismo_599991-3386.png);
+  background-size: cover;  
+  background-position: center center; 
+  background-attachment: fixed; 
+  margin: 0; 
+  font-family: Arial, sans-serif;  
+}
+ .row::after {
     content: "";
     clear: both;
     display: table;
@@ -15,7 +26,7 @@
   }
 
   .header {
-    background-color: #723228;
+    background-color: transparent;
     color: #ffffff;
     padding: 15px;
   }
@@ -29,34 +40,38 @@
   .menu li {
     padding: 8px;
     margin-bottom: 7px;
-    background-color: #732420;
+    background-color: #f99456;
     color: #ffffff;
     box-shadow: 0 1px 3px rgba(184, 103, 103, 0.12), 0 1px 2px rgba(0,0,0,0.24);
   }
-
-
   .menu li:hover {
-    background-color: #732420;
+    background-color: #f99456;
   }
-
+  .main{
+    background-color: #f99456;
+      color: white;
+      text-align: center;
+      font-size: 14px; 
+  }
   .aside {
-    background-color: #732420;
+    background-color: #f99456;
     padding: 15px;
     color: #ffffff;
     text-align: center;
     font-size: 14px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   }
-
+  .aside img{
+    width: 100%;
+  }
   .footer {
-    background-color: #723228;
+    background-color: #f99456;
     color: #ffffff;
     text-align: center;
     font-size: 12px;
     padding: 15px;
   }
 
-  /* For mobile phones: */
   [class*="col-"] {
     width: 100%;
   }
@@ -91,3 +106,7 @@
     .col-11 {width: 91.66%;}
     .col-12 {width: 100%;}
   }
+  .aside img{
+    width: 200px;
+  }
+  

@@ -7,7 +7,7 @@
     font-family: "Lucida Sans", sans-serif;
   }
   .header {
-    background-color: #723228;
+    background-color: #f99456;
     color: #ffffff;
     padding: 15px;
   }
@@ -21,17 +21,17 @@
   .menu li {
     padding: 8px;
     margin-bottom: 7px;
-    background-color: #732420;
+  	background-color: #f99456;
     color: #ffffff;
     box-shadow: 0 1px 3px rgba(184, 103, 103, 0.12), 0 1px 2px rgba(0,0,0,0.24);
   }
 
   .menu li:hover {
-    background-color: #732420;
+  	background-color: #f99456;
   }
 
   .aside {
-    background-color: #732420;
+  	background-color: #f99456;
     padding: 15px;
     color: #ffffff;
     text-align: center;
@@ -40,7 +40,7 @@
   }
 
   .footer {
-    background-color: #723228;
+    background-color: #f99456;
     color: #ffffff;
     text-align: center;
     font-size: 12px;

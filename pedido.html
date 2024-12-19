@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Pedido</title>
+		<meta name="viewport" content="width=device-width, initial scale=1.0">
+		<link rel="stylesheet" href="css/pedido.css">
+	</head>
+	<body>
+		<header>
+			<img src="img/logoa.png" alt="logoa">
+			<h1>RUN & GO</h1>
+		</header>
+		<div class="respmenu">
+			<input type="checkbox" id="menu-toggle">
+			<label for="menu-toggle" class="menu-icon">
+				<i class="fas fa-bars"></i> 
+				<i class="fas fa-times"></i> 
+			</label>
+		<nav class="menu">
+			<ul>
+				<li><a href="index.html">Inicio</a></li>
+				<li><a href="catalogo.html">Catalogo</a></li>
+				<li><a href="ropa.html">Ropa</a></li>
+				<li><a href="zapatillas.html">Zapatillas</a></li>
+				<li><a href="accesorios.html">Accesorios</a></li>
+				<li><a href="carrito.html">Carrito de Compra</a></li>
+                <li><a href="pedido.html"> Pedido</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+			</ul>
+		</nav>
+		</div>
+        <main>
+			<h2>Pedido</h2>
+			<h3>Tus Datos</h3>
+            <table border="i">
+                <tr>
+                    <td>Nombre</td>
+                    <td><input type="text" name="nombre"></td>
+                </tr>
+                <tr>
+                    <td>Apellidos</td>
+                    <td><input type="text" name="apellidos"></td>
+                </tr>
+                <tr>
+                    <td>DNI</td>
+                    <td><input type="text" name="dni"></td>
+                </tr>
+                <tr>
+                    <td>email</td>
+                    <td><input type="text" name="email"></td>
+                </tr>
+                <tr>
+                    <td>localidad</td>
+                    <td><input type="text" name="localidad" ></td>
+                </tr>
+                <tr>
+                    <td>Codigo Postal</td>
+                    <td><input type="text" name="codigo postal" ></td>
+                </tr>
+                <tr>
+                    <td>Probincia</td>
+                    <td><input type="text" name="probincia" ></td>
+                </tr>
+                <tr>
+                    <td>Dirección Domiciliaria</td>
+                    <td><input type="text" name="dirección domiciliaria"></td>
+                </tr>
+            </table>
+            <button class="checkout-button">Siguiente</button>
+        </main>
+        <footer>
+			<p>&copy; 2024 RUN&GO </p>
+		</footer>
+	</body>
+</html>

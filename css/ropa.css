@@ -88,7 +88,7 @@ footer {
 
     #nav-menu {
         display: block;
-        background-color: #723228;
+		background-color: #f99456;
         position: absolute;
         top: 60px;
         left: 0;
@@ -100,7 +100,7 @@ footer {
 
     nav ul {
         flex-direction: column;
-        background-color: #723228;
+        background-color: #f99456;
         padding: 10px;
     }
 
@@ -117,10 +117,10 @@ footer {
         border-bottom: 1px solid #fff;
     }
 	nav ul li {
-    	transition: background-color 0.3s ease;	
+    	transition: background-color 0.3s ease;
 	}
 	nav ul li:hover {
-    	background-color: #4b2c2a;
+    	background-color: #f99456;
 	}
 	main img{
 		width: 180px;
