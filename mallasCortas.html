@@ -8,7 +8,7 @@
 	
 	<body>
 		<header>
-			<img src="img/logoa.jpg" alt="logoa">
+			<img src="img/logoa.png" alt="logoa">
 			<h1>RUN & GO</h1>
 		</header>
 		<nav>
@@ -20,7 +20,7 @@
 				<li><a href="accesorios.html">Accesorios</a></li>
 				<li><a href="carrito.html">Carrito de Compra</a></li>
 				<li><a href="pedido.html"> Pedido</a></li>
-				<li><a href="contacto.html">Contacto</a></li>
+				<li><a href="contacto.html"> Contacto</a></li>
 			</ul>
 		</nav>
 		<main>
@@ -28,27 +28,42 @@
 			<p></p>
 			<Section>
 				<div id="mallaCorta1">
-					<img src="img/Training_Essentials_High-Waisted_3_bandas_Negro_HK9964_01_laydown_1.png" alt="Mallas Adidas"><br>
+					<img src="img/adidas-womens-terrex-3-stripes-short-tights-black-hk9964-7-1237278.png" alt="Mallas Adidas"><br>
                     Training Essentials High-Waisted 3 bandas Negro<br>
 					Precio: 29,99 &euro;
-					<button class="checkout-button">Añadir al carrito</button>
+					<a href="carrito.html">
+						<button class="checkout-button" onclick="addToCart('raining Essentials High-Waisted 3 bandas Negro', 29.99)">Añadir al Carrito</button>
+					</a>
 				</div>
 				<div id="mallaCorta2">
-					<img src="img/spyro-running-r-raco-vista-frontal-1000993716-.png" alt="Mallas Spyro"><br>
+					<img src="img/spyro-malla-corta-running-r-raco-vista-frontal-1000993716-.png" alt="Mallas Spyro"><br>
 					Spyro Raco<br>
 					Precio: 17,99 &euro;
-					<button class="checkout-button">Añadir al carrito</button>
+					<a href="carrito.html">
+						<button class="checkout-button" onclick="addToCart('Spyro Raco', 17.99)">Añadir al Carrito</button>
+					</a>
 				</div>
 				<div id="mallaCorta3">
 					<img src="img/ce32cd337a844ef5a02c4d3e76c13ece.png" alt="Mallas PUMA"><br>
                     Puma Run Elite-AW24<br>;
 					Precio: 28,99 &euro;
-					<button class="checkout-button">Añadir al carrito</button>
+					Precio con Descuento (12%): <strong> 25,51 €</strong><br>
+					<span class="discount-tag">-12%</span><br>
+					<a href="carrito.html">
+						<button class="checkout-button" onclick="addToCart('Puma Run Elite-AW24', 28.99, 25.51)">Añadir al Carrito</button>
+					</a>
 				</div>
 			</section>
 		</main>
 		<footer>
-			<p>&copy; 2024 RUN&GO </p>
+			<p>&copy; @2024 [RUN&GO]. Todos los derechos reservados.</p>
 		</footer>
+		<script>
+		function addToCart(productName, originalPrice, discountedPrice) {
+		let cart = JSON.parse(localStorage.getItem('cart')) || []; // Obtener el carrito del localStorage
+		cart.push({ name: productName, originalPrice: originalPrice, discountedPrice: discountedPrice }); // Añadir el producto con el precio con descuento al carrito
+		localStorage.setItem('cart', JSON.stringify(cart)); // Guardar el carrito actualizado en el localStorage
+		alert(productName + " ha sido añadido al carrito.");}
+		</script>
 	</body>
 </html>

@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Guantes</title>
+		<link rel="stylesheet" href="css/guantes.css">
+		<meta name="viewport" content="width=device-width, initial scale=1.0">
+	</head>
+	<body>
+		<header>
+			<img src="img/logoa.jpg" alt="logoa">
+			<h1>RUN & GO</h1>
+		</header>
+		<div class="respmenu">
+			<input type="checkbox" id="menu-toggle">
+			<label for="menu-toggle" class="menu-icon">
+				<i class="fas fa-bars"></i> 
+				<i class="fas fa-times"></i> 
+			</label>
+		<nav class="menu">
+			<ul>
+				<li><a href="index.html">Inicio</a></li>
+				<li><a href="catalogo.html">Catalogo</a></li>
+				<li><a href="ropa.html">Ropa</a></li>
+				<li><a href="zapatillas.html">Zapatillas</a></li>
+				<li><a href="accesorios.html">Accesorios</a></li>
+				<li><a href="carrito.html">Carrito de Compra</a></li>
+				<li><a href="pedido.html"> Pedido</a></li>
+				<li><a href="contacto.html"> Contacto</a></li>
+			</ul>
+		</nav>
+		<main>
+			<h2>Guantes</h2>
+			<p></p>
+			<section>
+				<div id="guantes1">
+					<img src="img/Guantes-para-correr-finos-Unigear.png" alt=""><br>
+					Guantes para correr finos Unigear<br>
+					Precio: 14,99 &euro;<br>
+					<a href="carrito.html">
+						<button class="checkout-button" onclick="addToCart(' Guantes para correr finos Unigear', 14.99)">Añadir al Carrito</button>
+					</a>
+					
+				</div>
+				<div id="guantes2">
+					<img src="img/Guantes-para-correr-impermeables-Under-Armour.png" alt="Guantes Under Armour"><br>
+					Guantes para correr impermeables Under Armour<br>
+					Precio: 23,99 &euro;<br>
+					<a href="carrito.html">
+						<button class="checkout-button" onclick="addToCart(' Guantes para correr impermeables Under Armour', 23.99)">Añadir al Carrito</button>
+					</a>
+				</div>
+				<div id="guantes3">
+					<img src="img/nike-guantes-pacer-lightweight-rg.png" alt="Guantes Nike"><br>
+                	Nike Guantes Pacer lightweight RG<br>
+					Precio: 19,99 &euro;<br>
+					<a href="carrito.html">
+						<button class="checkout-button" onclick="addToCart(' Nike Guantes Pacer lightweight RG', 19.99)">Añadir al Carrito</button>
+					</a>
+				</div>
+			</Section>
+		</main>
+		<footer>
+			<p>&copy; @2024 [RUN&GO]. Todos los derechos reservados.</p>
+		</footer>
+		<script>
+			function addToCart(productName, originalPrice, discountedPrice) {
+			let cart = JSON.parse(localStorage.getItem('cart')) || []; // Obtener el carrito del localStorage
+			cart.push({ name: productName, originalPrice: originalPrice, discountedPrice: discountedPrice }); // Añadir el producto con el precio con descuento al carrito
+			localStorage.setItem('cart', JSON.stringify(cart)); // Guardar el carrito actualizado en el localStorage
+			alert(productName + " ha sido añadido al carrito.");}
+			</script>
+	</body>
+</html>

@@ -7,7 +7,7 @@
 	</head>
 	<body>
 		<header>
-			<img src="img/logoa.jpg" alt="logoa">
+			<img src="img/logoa.png" alt="logoa">
 			<h1>RUN & GO</h1>
 		</header>
 		<div class="respmenu">
@@ -25,7 +25,7 @@
 				<li><a href="accesorios.html">Accesorios</a></li>
 				<li><a href="carrito.html">Carrito de Compra</a></li>
 				<li><a href="pedido.html"> Pedido</a></li>
-				<li><a href="contacto.html">Contacto</a></li>
+				<li><a href="contacto.html"> Contacto</a></li>
 			</ul>
 		</nav>
 		<main>
@@ -36,36 +36,58 @@
 					<img src="img/3-aee8c6fb.png" alt="Camiseta PUMA"><br>
                     individualFINAL WC Jersey<br>
 					Precio: 37,99 &euro;
-					<button class="checkout-button">Añadir al carrito</button>
+					Precio con Descuento (15%): <strong> 33,43 €</strong><br>
+					<span class="discount-tag">-12%</span><br>
+					<a href="carrito.html">
+						<button class="checkout-button" onclick="addToCart('individualFINAL WC Jersey', 33.43)">Añadir al Carrito</button>
+					</a>
 				</div>
 				<div id="camiseta2">
 					<img src="img/2-aee8c6fb.png" alt="Camiseta PUMA"><br>
 					individual FINAL Jersey Puma<br>
-					<button class="checkout-button">Añadir al carrito</button>
 					Precio: 39,99 &euro;
+					Precio con Descuento (12%): <strong> 35,19 €</strong><br>
+					<span class="discount-tag">-12%</span><br>
+					<a href="carrito.html">
+						<button class="checkout-button" onclick="addToCart('individual FINAL Jersey Puma', 39.99)">Añadir al Carrito</button>
+					</a>
 				</div>
 				<div id="camiseta3">
-					<img src="img/main_hk5633_01_laydown_661f.png" alt="Camiseta Adidas"><br>
+					<img src="img/HK5633_1_APPAREL_Photography_Front_View.png" alt="Camiseta Adidas"><br>
                     Adidas adizero Speed Tee<br>;
-					Precio: 28,00 &euro;
-					<button class="checkout-button">Añadir al carrito</button>
+					Precio: 28,00 &euro;<br>
+					<a href="carrito.html">
+						<button class="checkout-button" onclick="addToCart('Adidas adizero Speed Tee', 28.00)">Añadir al Carrito</button>
+					</a>
 				</div>
 				<div id="camiseta4">
 					<img src="img/1-aee8c6fb.png" alt="Camiseta Nike"><br>
                     T-Shirt Dry Miler Running<br>
-					Precio: 40,25 &euro;
-					<button class="checkout-button">Añadir al carrito</button>
+					Precio: 40,25 &euro;<br>
+					<a href="carrito.html">
+						<button class="checkout-button" onclick="addToCart(' T-Shirt Dry Miler Running', 40.25)">Añadir al Carrito</button>
+					</a>
 				</div>
 				<div id="camiseta5">
 					<img src="img/4-aee8c6fb.png" alt="Camiseta Asics"><br>
                     Camiseta asics ss top sulphur spring<br>
-					Precio: 25,00 &euro;
-					<button class="checkout-button">Añadir al carrito</button>
+					Precio: 25,00 &euro;<br>
+					<a href="carrito.html">
+						<button class="checkout-button" onclick="addToCart(' Camiseta asics ss top sulphur spring', 25.00)">Añadir al Carrito</button>
+					</a>
 				</div>
 			</section>
 		</main>
 		<footer>
-			<p>&copy; 2024 </p>
+			<p>&copy; @2024 [RUN&GO]. Todos los derechos reservados.</p>
 		</footer>
+
+		<script>
+			function addToCart(productName, originalPrice, discountedPrice) {
+			let cart = JSON.parse(localStorage.getItem('cart')) || []; // Obtener el carrito del localStorage
+			cart.push({ name: productName, originalPrice: originalPrice, discountedPrice: discountedPrice }); // Añadir el producto con el precio con descuento al carrito
+			localStorage.setItem('cart', JSON.stringify(cart)); // Guardar el carrito actualizado en el localStorage
+			alert(productName + " ha sido añadido al carrito.");}
+		</script>
 	</body>
 </html>

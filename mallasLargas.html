@@ -1,17 +1,23 @@
 <!doctype html>
 <html>
 	<head>
-		<title>Mallas</title>
+		<title>Mallas Largas</title>
 		<link rel="stylesheet" href="css/mallasLargas.css">
 		<meta name="viewport" content="width=device-width, initial scale=1.0">
 	</head>
 	
 	<body>
 		<header>
-			<img src="img/logoa.jpg" alt="logoa">
+			<img src="img/logoa.png" alt="logoa">
 			<h1>RUN & GO</h1>
 		</header>
-		<nav>
+		<div class="respmenu">
+			<input type="checkbox" id="menu-toggle">
+			<label for="menu-toggle" class="menu-icon">
+				<i class="fas fa-bars"></i> 
+				<i class="fas fa-times"></i> 
+			</label>
+		<nav class="menu">
 			<ul>
 				<li><a href="index.html">Inicio</a></li>
 				<li><a href="catalogo.html">Catalogo</a></li>
@@ -20,35 +26,50 @@
 				<li><a href="accesorios.html">Accesorios</a></li>
 				<li><a href="carrito.html">Carrito de Compra</a></li>
 				<li><a href="pedido.html"> Pedido</a></li>
-				<li><a href="contacto.html">Contacto</a></li>
+				<li><a href="contacto.html"> Contacto</a></li>
 			</ul>
+
 		</nav>
 		<main>
 			<h2>Mallas Largas</h2>
 			<p></p>
 			<section>
 				<div id="mallaLarga1">
-					<img src="img/medias-1000629881-00-P-X-20200401144459.png" alt="Mallas Joma"><br>
+					<img src="img/Mallas_Largas_Winter.png" alt="Mallas Joma"><br>
 					Mallas largas Winter negro<br>
 					Precio: 34,00 &euro;
-					<button class="checkout-button">Añadir al carrito</button>
+					<a href="carrito.html">
+						<button class="checkout-button" onclick="addToCart('Mallas largas Winter negro', 34.00)">Añadir al Carrito</button>
+					</a>
 				</div>
 				<div id="mallaLarga2">
 					<img src="img/medias-1000730849-00-P-X-20211119163745.png" alt="Mallas Spyro"><br>
 					Malla Running P-MASKE<br>
 					Precio: 24,99 &euro;
-					<button class="checkout-button">Añadir al carrito</button>
+					<a href="carrito.html">
+						<button class="checkout-button" onclick="addToCart(' Malla Running P-MASKE', 24.99)">Añadir al Carrito</button>
+					</a>
 				</div>
 				<div id="mallaLarga3">
-					<img src="img/ua-1361586-001_001.png" alt="Malla Under Armour"><br>
+					<img src="img/under-armour-heatgear-armour-leggings-ropa-de-compresion-detail-2.png" alt="Malla Under Armour"><br>
                 	Malla larga Under Armour HeatGear negro<br>
 					Precio: 44,99 &euro;
-					<button class="checkout-button">Añadir al carrito</button>
+					<a href="carrito.html">
+						<button class="checkout-button" onclick="addToCart(' Malla larga Under Armour HeatGear negro', 44.99)">Añadir al Carrito</button>
+					</a>
 				</div>
-			</Section>
+			</section>
 		</main>
 		<footer>
-			<p>&copy; 2024 RUN&GO </p>
+			<p>&copy; @2024 [RUN&GO]. Todos los derechos reservados.</p>
 		</footer>
+
+		<script>
+			function addToCart(productName, originalPrice, discountedPrice) {
+			let cart = JSON.parse(localStorage.getItem('cart')) || []; // Obtener el carrito del localStorage
+			cart.push({ name: productName, originalPrice: originalPrice, discountedPrice: discountedPrice }); // Añadir el producto con el precio con descuento al carrito
+			localStorage.setItem('cart', JSON.stringify(cart)); // Guardar el carrito actualizado en el localStorage
+			alert(productName + " ha sido añadido al carrito.");}
+		</script>
 	</body>
 </html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Pedido3</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="css/pedido3.css">
+	</head>
+	<body>
+		<header>
+			<img src="img/logoa.png" alt="logoa">
+			<h1>RUN & GO</h1>
+		</header>
+		<div class="respmenu">
+			<input type="checkbox" id="menu-toggle">
+			<label for="menu-toggle" class="menu-icon">
+				<i class="fas fa-bars"></i> 
+				<i class="fas fa-times"></i> 
+			</label>
+			<nav class="menu">
+				<ul>
+					<li><a href="index.html">Inicio</a></li>
+					<li><a href="catalogo.html">Catálogo</a></li>
+					<li><a href="ropa.html">Ropa</a></li>
+					<li><a href="zapatillas.html">Zapatillas</a></li>
+					<li><a href="accesorios.html">Accesorios</a></li>
+					<li><a href="carrito.html">Carrito de Compra</a></li>
+					<li><a href="pedido.html">Pedido</a></li>
+					<li><a href="contacto.html"> Contacto</a></li>
+				</ul>
+			</nav>
+		</div>
+		<main>
+			<h2>Pedido</h2>
+			<h3>Carrito de Compra</h3>
+			<form action="procesar_pedido.html" method="post">
+				<table>
+					<tr>
+						<td>
+							<input type="radio" id="paypal" name="metodo_pago" value="paypal" required>
+							<label for="paypal">PayPal</label>
+							<img src="img/paypal-logo-0-2048x2048-1.png" alt="paypal">
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="radio" id="tarjeta" name="metodo_pago" value="tarjeta" required>
+							<label for="tarjeta">Tarjeta de Crédito</label>
+							<img src="img/png-transparent-card-illustration-bank-card-credit-card-atm-card-debit-card-credit-card-icon-angle-rectangle-payment-thumbnail.png" alt="tarjeta credito">
+						</td>
+					</tr>
+				</table>
+				<a href="pedido4.html">
+				<button type="submit" class="checkout-button">Realizar Pedido</button>
+				</a>
+			</form>
+		</main>
+		<footer>
+			<p>&copy; @2024 [RUN&GO]. Todos los derechos reservados.</p>
+		</footer>
+	</body>
+</html>

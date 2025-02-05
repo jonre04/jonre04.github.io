@@ -1,9 +1,9 @@
 <!doctype html>
 <html>
 	<head>
-		<title>Pedido</title>
+		<title>Pedido2</title>
 		<meta name="viewport" content="width=device-width, initial scale=1.0">
-		<link rel="stylesheet" href="css/pedido.css">
+		<link rel="stylesheet" href="css/pedido2.css">
 	</head>
 	<body>
 		<header>
@@ -24,19 +24,77 @@
 				<li><a href="zapatillas.html">Zapatillas</a></li>
 				<li><a href="accesorios.html">Accesorios</a></li>
 				<li><a href="carrito.html">Carrito de Compra</a></li>
-                <li><a href="pedido.html"> Pedido</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="pedido.html"> Pedido</a></li>
+        <li><a href="contacto.html"> Contacto</a></li>
 			</ul>
 		</nav>
 		</div>
-        <main>
-            <h2>Pedido</h2>
+    <main>
+      <h2>Carrito de Compra</h2>
+      <table id="cartTable">
+          <tr>
+              <th>Producto</th>
+              <th>Cantidad</th>
+              <th>Precio</th>
+              <th>Total</th>
+              <th>Eliminar</th>
+          </tr>
+      </table>
+      <button class="checkout-button" onclick="proceedToCheckout()">Ir al Pedido</button>
+  </main>
+  <script>
+      function loadCart() {
+          let cart = JSON.parse(localStorage.getItem('cart')) || [];
+          let table = document.getElementById('cartTable');
 
-        </main>
+          // Iterar sobre los productos en el carrito y mostrarlos
+          cart.forEach(item => {
+              let row = table.insertRow();
+              let cell1 = row.insertCell(0);
+              let cell2 = row.insertCell(1);
+              let cell3 = row.insertCell(2);
+              let cell4 = row.insertCell(3);
+
+              cell1.textContent = item.name;
+              cell2.innerHTML = `<input type="number" value="1" min="1" onchange="updateTotal()">`; // Campo para cantidad
+              cell3.textContent = item.price + " €";
+              cell4.textContent = item.price + " €"; // Inicialmente, el total es igual al precio
+          });
+      }
+
+      function updateTotal() {
+          let cart = JSON.parse(localStorage.getItem('cart')) || [];
+          let total = 0;
+          let table = document.getElementById('cartTable');
+          let rows = table.rows;
+
+          // Recalcular el total basado en la cantidad
+          for (let i = 1; i < rows.length; i++) {
+              let price = parseFloat(rows[i].cells[2].textContent);
+              let quantity = rows[i].cells[1].children[0].value;
+              total += price * quantity;
+          }
+
+          alert('Total: ' + total + ' €');
+      }
+
+      function proceedToCheckout() {
+          if (localStorage.getItem('cart') && JSON.parse(localStorage.getItem('cart')).length > 0) {
+              window.location.href = "pedido.html"; // Redirige al pedido
+          } else {
+              alert("Tu carrito está vacío.");
+          }
+      }
+
+      // Cargar el carrito al cargar la página
+      window.onload = loadCart;
+  </script>
+            <button><a href="carrito.html"></button>
+                <button class="checkout-button">Cambia tus Productos</button>
         <aside>
-			<h3>Tus Datos</h3>
+            <h3>Tus Datos</h3>
             <table border="i">
-                <tr>
+                 <tr>
                     <td>Nombre</td>
                     <td><input type="text" name="nombre"></td>
                 </tr>
@@ -45,12 +103,16 @@
                     <td><input type="text" name="apellidos"></td>
                 </tr>
                 <tr>
-                    <td>DNI</td>
-                    <td><input type="text" name="dni"></td>
-                </tr>
-                <tr>
                     <td>email</td>
                     <td><input type="text" name="email"></td>
+                </tr>
+                <tr>
+                    <td>nº de telefono</td>
+                    <td><input type="text" name="nºTelefono"></td>
+                </tr>
+                <tr>
+                    <td>Direccion de Envio</td>
+                    <td><input type="text" name="dirección de envio"></td>
                 </tr>
                 <tr>
                     <td>localidad</td>
@@ -61,18 +123,19 @@
                     <td><input type="text" name="codigo postal" ></td>
                 </tr>
                 <tr>
-                    <td>Probincia</td>
+                    <td>Provincia</td>
                     <td><input type="text" name="probincia" ></td>
                 </tr>
-                <tr>
-                    <td>Dirección Domiciliaria</td>
-                    <td><input type="text" name="dirección domiciliaria"></td>
-                </tr>
+                <button><a href="pedido.html"></button>
+                    <button class="checkout-button">Cambia tus Datos</button>
             </table>
+        </aside>
+        <a href="pedido3.html">
             <button class="checkout-button">Siguiente</button>
+        </a>
         </main>
         <footer>
-			<p>&copy; 2024 RUN&GO </p>
+			<p>&copy; @2024 [RUN&GO]. Todos los derechos reservados.</p>
 		</footer>
 	</body>
 </html>

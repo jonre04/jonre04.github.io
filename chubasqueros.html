@@ -8,7 +8,7 @@
 	
 	<body>
 		<header>
-			<img src="img/logoa.jpg" alt="logoa">
+			<img src="img/logoa.png" alt="logoa">
 			<h1>RUN & GO</h1>
 		</header>
 		<div class="respmenu">
@@ -26,6 +26,7 @@
 				<li><a href="accesorios.html">Accesorios</a></li>
 				<li><a href="carrito.html">Carrito de Compra</a></li>
 				<li><a href="pedido.html"> Pedido</a></li>
+				<li><a href="contacto.html"> Contacto</a></li>
 			</ul>
 		</nav>
 		<main>
@@ -34,27 +35,40 @@
 		<main>
 			<section>
 				<div id="chubasquero1">
-					<img src="img/chubasquero asics.png" alt="Chubasquero Asics"><br>
+					<img src="img/asics-fujitrail-packable-windbreaker-chaqueta-de-running.png" alt="Chubasquero Asics"><br>
 					FUJITRAIL PACKABLE JACKET<br>
-					Precio: 120,00 &euro;
-					<button class="checkout-button">Añadir al carrito</button>
+					Precio: 120,00 &euro;<br>
+					<a href="carrito.html">
+						<button class="checkout-button" onclick="addToCart('FUJITRAIL PACKABLE JACKET', 120.00)">Añadir al Carrito</button>
+					</a>
 				</div>
 				<div id="chubasquero2">
 					<img src="img/45c068e21c644582ad9fae5c4c324023.png" alt="Chubasquero Adidas"><br>
-					adidas Performance RAIN.RDY - Impermeable - blac<br>
-					Precio: 149,95 &euro;
-					<button class="checkout-button">Añadir al carrito</button>
+					adidas Performance RAIN.RDY Impermeable blac<br>
+					Precio: 149,95 &euro;<br>
+					<a href="carrito.html">
+						<button class="checkout-button" onclick="addToCart('adidas Performance RAIN.RDY Impermeable blac', 149.95)">Añadir al Carrito</button>
+					</a>
 				</div>
 				<div id="chubasquero3">
-					<img src="img/chubasquero-correr-lc1043600-0-m-bonattiracewpjkt-poseidon-run-jpg-cq5dam-web-1200-1200-1554723230.png" alt="Chubasquero Salomon"><br>
+					<img src="img/chubasquero-salomon-bonatti-race-wp-jkt-poseidon-men.png" alt="Chubasquero Salomon"><br>
                 	SALOMON BONATTI RACE WP JKT<br>
-					Precio: 150,00 &euro;
-					<button class="checkout-button">Añadir al carrito</button>
+					Precio: 150.00 &euro;<br>
+					<a href="carrito.html">
+						<button class="checkout-button" onclick="addToCart('SALOMON BONATTI RACE WP JKT', 150.00)">Añadir al Carrito</button>
+					</a>
 				</div>
 			</Section>
 		</main>
 		<footer>
-			<p>&copy; 2024 RUN&GO </p>
+			<p>&copy; @2024 [RUN&GO]. Todos los derechos reservados.</p>
 		</footer>
+		<script>
+			function addToCart(productName, originalPrice, discountedPrice) {
+			let cart = JSON.parse(localStorage.getItem('cart')) || []; // Obtener el carrito del localStorage
+			cart.push({ name: productName, originalPrice: originalPrice, discountedPrice: discountedPrice }); // Añadir el producto con el precio con descuento al carrito
+			localStorage.setItem('cart', JSON.stringify(cart)); // Guardar el carrito actualizado en el localStorage
+			alert(productName + " ha sido añadido al carrito.");}
+			</script>
 	</body>
 </html>

@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Bragas de Cuello</title>
+		<link rel="stylesheet" href="css/bragasCuello.css">
+		<meta name="viewport" content="width=device-width, initial scale=1.0">
+	</head>
+	
+	<body>
+		<header>
+			<img src="img/logoa.png" alt="logoa">
+			<h1>RUN & GO</h1>
+		</header>
+		<div class="respmenu">
+			<input type="checkbox" id="menu-toggle">
+			<label for="menu-toggle" class="menu-icon">
+				<i class="fas fa-bars"></i> 
+				<i class="fas fa-times"></i> 
+			</label>
+		<nav class="menu">
+			<ul>
+				<li><a href="index.html">Inicio</a></li>
+				<li><a href="catalogo.html">Catalogo</a></li>
+				<li><a href="ropa.html">Ropa</a></li>
+				<li><a href="zapatillas.html">Zapatillas</a></li>
+				<li><a href="accesorios.html">Accesorios</a></li>
+				<li><a href="carrito.html">Carrito de Compra</a></li>
+				<li><a href="pedido.html"> Pedido</a></li>
+				<li><a href="contacto.html"> Contacto</a></li>
+			</ul>
+		</nav>
+		<main>
+			<h2>Bragas de Cuello</h2>
+			<p></p>
+			<section>
+				<div id="bragaCuello1">
+					<img src="img/braga-de-cuello-premium-cestrada-starry-n-az-adulto-multicolor.png" alt=""><br>
+					Braga de cuello Premium C.Estrada Starry N AZ Adulto Multicolor<br>
+					Precio: 25,99 &euro;<br>
+					<a href="carrito.html">
+						<button class="checkout-button" onclick="addToCart('Braga de cuello Premium C.Estrada Starry N AZ Adulto Multicolor', 25.99)">Añadir al Carrito</button>
+					</a>
+				</div>
+				<div id="bragaCuello2">
+					<img src="img/braga-de-cuello-buff-original-ecostrech.png" alt=""><br>
+					BRAGA DE CUELLO BUFF ORIGINAL ECOSTRECH<br>
+					Precio: 18,95 &euro;<br>
+					<a href="carrito.html">
+						<button class="checkout-button" onclick="addToCart('BRAGA DE CUELLO BUFF ORIGINAL ECOSTRECH', 18.95)">Añadir al Carrito</button>
+					</a>
+				</div>
+				<div id="bragaCuello3">
+					<img src="img/braga-de-cuello-buff-polar-prints.png" alt=""><br>
+                	BRAGA DE CUELLO BUFF POLAR PRINTS<br>
+					Precio: 29,95 &euro;<br>
+					<a href="carrito.html">
+						<button class="checkout-button" onclick="addToCart('BRAGA DE CUELLO BUFF POLAR PRINTS', 29.95)">Añadir al Carrito</button>
+					</a>
+				</div>
+			</Section>
+		</main>
+		<footer>
+			<p>&copy; @2024 [RUN&GO]. Todos los derechos reservados.</p>
+		</footer>
+		<script>
+			function addToCart(productName, originalPrice, discountedPrice) {
+			let cart = JSON.parse(localStorage.getItem('cart')) || []; // Obtener el carrito del localStorage
+			cart.push({ name: productName, originalPrice: originalPrice, discountedPrice: discountedPrice }); // Añadir el producto con el precio con descuento al carrito
+			localStorage.setItem('cart', JSON.stringify(cart)); // Guardar el carrito actualizado en el localStorage
+			alert(productName + " ha sido añadido al carrito.");}
+		</script>
+	</body>
+</html>

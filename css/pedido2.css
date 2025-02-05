@@ -1,126 +1,174 @@
-*{margin: 0; padding: 0;} 
-body {
-    border: 1px dotted black;
-    max-width: 1062x;
-    margin-left: auto;
-    margin-right: auto;
-}
-header {
-    border: 1px dotted black;
-    background-color: #f99456;
-    color: #ffffff;
-    margin: 1.968503937007874%; 
-    padding: 1.968503937007874%;
-    width: 94,161958568738229755%;
-}
-header img{
-    width: 230px;
-    height: 70px;
-}
-h1{
-    display: inline;		
-}
-.menu-toggle {
-    display: none; /* Inicialmente oculto */
-    cursor: pointer;
-    font-size: 30px;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-#nav-menu {
+body {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el cuerpo ocupe al menos el 100% de la altura de la ventana */
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+header {
+    background-color: #ff6600;
+   
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+header img {
+    width: 50px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+header h1 {
+    display: inline-block;
+    font-size: 24px;
+    margin: 0;
+}
+.respmenu {
     display: none;
 }
 
-nav ul {
-    margin: 1.968503937007874%; 
-    padding: 1.968503937007874%;
-    background-color: #f99456;
-    list-style: none;
+.menu-icon {
+    display: block;
+    font-size: 30px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.menu {
     display: flex;
+    justify-content: space-around;
+    background-color: #333;
 }
 
-nav li {
-    margin: 0.656167979002624%;
-    border: 1px dotted black;
+.menu ul {
+    list-style: none;
+    padding: 0;
 }
 
-nav a {
+.menu ul li {
+    display: inline;
+    padding: 10px;
+}
+
+.menu ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+h2, h3 {
+    margin-top: 20px;
+    font-size: 24px;
+    color: #333;
+}
+
+main {
+    padding: 20px;
+    flex-grow: 1; 
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+table input, table select {
+    width: 80%;
+    padding: 5px;
+}
+
+button {
+    background-color: #ff6600;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    text-align: center;
+}
+
+button a {
     color: white;
     text-decoration: none;
-    padding: 10px;
 }
-main {
-    border: 1px dotted black;
-    margin: 1.968503937007874%; 
-    padding: 1.968503937007874%;
-    width: 94,161958568738229755%;;
+
+button:hover {
+    background-color: #555;
 }
-main table{
-    width: 80%;
-    margin: 20px auto;
-    border-collapse: collapse;
+
+.delete-button {
+    background-color: red;
+}
+
+.delete-button:hover {
+    background-color: darkred;
+}
+
+aside {
     background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
-td {
+aside table {
+    width: 100%;
+}
+
+aside table td {
     padding: 10px;
-    text-align: left;
 }
 
-td input {
+aside table input {
     width: 100%;
     padding: 8px;
     margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-    color: #333;
-    background-color: #f9f9f9;
 }
 
-td input:focus {
-    border-color: #333;
-    outline: none;
-}  
-main button{
-    width: 100%;
-    padding: 10px;
-    background-color: #f99456;
+footer {
+    background-color: #ff6600;
     color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 1rem;
-    cursor: pointer;
-    margin-top: 10px;
-}
-button:hover {
-    background-color: #f99456;
-}
-footer{
-    border: 1px dotted black;
-    background-color: #f99456;
-    color: #ffffff;
-    margin: 1.968503937007874%; 
-    padding: 1.968503937007874%;
-    width: 94,161958568738229755%;
-    clear: both;
     text-align: center;
+    padding: 20px 0;
+    margin-top: auto; /* Esto asegura que el footer se desplace hacia abajo */
 }
-footer p {
-    margin: 0;
-    font-size: 14px;
-}
-
-
-@media screen and (max-width: 768px) {
-    table {
-        width: 90%;
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
     }
 
-    .checkout-button {
-        width: 80%;
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .menu ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    #menu-toggle:checked + .menu {
+        display: flex;
     }
 }

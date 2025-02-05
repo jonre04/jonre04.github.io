@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Pedido4</title>
+		<meta name="viewport" content="width=device-width, initial scale=1.0">
+		<link rel="stylesheet" href="css/pedido4.css">
+	</head>
+	<body>
+		<header>
+			<img src="img/logoa.png" alt="logoa">
+			<h1>RUN & GO</h1>
+		</header>
+		<div class="respmenu">
+			<input type="checkbox" id="menu-toggle">
+			<label for="menu-toggle" class="menu-icon">
+				<i class="fas fa-bars"></i> 
+				<i class="fas fa-times"></i> 
+			</label>
+		<nav class="menu">
+			<ul>
+				<li><a href="index.html">Inicio</a></li>
+				<li><a href="catalogo.html">Catalogo</a></li>
+				<li><a href="ropa.html">Ropa</a></li>
+				<li><a href="zapatillas.html">Zapatillas</a></li>
+				<li><a href="accesorios.html">Accesorios</a></li>
+				<li><a href="carrito.html">Carrito de Compra</a></li>
+                <li><a href="pedido.html"> Pedido</a></li>
+				<li><a href="contacto.html"> Contacto</a></li>
+			</ul>
+		</nav>
+		</div>
+        <main>
+			<h2>Pedido</h2>
+            <h3>Datos de la tarjeta de credito</h3>
+            <form action="procesar_pago.php" method="POST">
+            <fieldset>
+                <label for="tipo">Tipo:</label>
+                <input type="text" id="nombre-titular" name="tipo" placeholder="" required>
+                
+                <label for="nombre-titular">Nombre del Titular:</label>
+                <input type="text" id="nombre-titular" name="nombre_titular" placeholder="" required>
+
+                <label for="numero-tarjeta">Número de la Tarjeta:</label>
+                <input type="text" id="numero-tarjeta" name="numero_tarjeta" maxlength="16" pattern="\d{16}" placeholder="" required>
+
+                <label for="fecha-expiracion">Fecha de Expiración:</label>
+                <input type="month" id="fecha-expiracion" name="fecha_expiracion" required> <br>
+
+                <label for="codigo-seguridad">Código de Seguridad (CVV):</label>
+                <input type="text" id="codigo-seguridad" name="codigo_seguridad" maxlength="4" pattern="\d{3,4}" placeholder="" required>
+            </fieldset>
+				<a href="pedido5.html">
+					<button type="submit" class="checkout-button">Realizar Pedido</button>
+				</a>
+            </form>
+        </main>
+        <footer>
+			<p>&copy; @2024 [RUN&GO]. Todos los derechos reservados.</p>
+		</footer>
+	</body>
+</html>

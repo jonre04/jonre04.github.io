@@ -1,126 +1,178 @@
-*{margin: 0; padding: 0;} 
+* { margin: 0;  padding: 0; box-sizing: border-box;}
+
 body {
-    border: 1px dotted black;
-    max-width: 1062x;
-    margin-left: auto;
-    margin-right: auto;
-}
-header {
-    border: 1px dotted black;
-    background-color: #f99456;
-    color: #ffffff;
-    margin: 1.968503937007874%; 
-    padding: 1.968503937007874%;
-    width: 94,161958568738229755%;
-}
-header img{
-    width: 230px;
-    height: 70px;
-}
-h1{
-    display: inline;		
-}
-.menu-toggle {
-    display: none; /* Inicialmente oculto */
-    cursor: pointer;
-    font-size: 30px;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-#nav-menu {
+header {
+    background-color: #ff6600;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+header img {
+    width: 50px;
+    height: auto;
+    vertical-align: middle;
+}
+
+header h1 {
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.respmenu {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #ff6600;
+}
+
+#menu-toggle {
     display: none;
 }
 
-nav ul {
-    margin: 1.968503937007874%; 
-    padding: 1.968503937007874%;
-    background-color: #f99456;
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-icon i {
+    font-size: 1.8em;
+    color: white;
+}
+
+.menu {
+    display: flex;
+}
+
+.menu ul {
     list-style: none;
     display: flex;
 }
 
-nav li {
-    margin: 0.656167979002624%;
-    border: 1px dotted black;
+.menu ul li {
+    margin-left: 20px;
 }
 
-nav a {
-    color: white;
+.menu ul li a {
     text-decoration: none;
-    padding: 10px;
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
 }
+
+.menu ul li a:hover {
+    color: white;
+}
+
 main {
-    border: 1px dotted black;
-    margin: 1.968503937007874%; 
-    padding: 1.968503937007874%;
-    width: 94,161958568738229755%;;
-}
-main table{
-    width: 80%;
-    margin: 20px auto;
-    border-collapse: collapse;
+    margin: 20px;
+    padding: 20px;
     background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+h3 {
+    font-size: 1.6em;
+    margin-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
 }
 
 td {
     padding: 10px;
-    text-align: left;
 }
 
-td input {
+input[type="text"] {
     width: 100%;
     padding: 8px;
     margin-top: 5px;
     border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-    color: #333;
-    background-color: #f9f9f9;
+    border-radius: 4px;
+    font-size: 1em;
 }
-
-td input:focus {
-    border-color: #333;
-    outline: none;
-}  
-main button{
-    width: 100%;
-    padding: 10px;
-    background-color: #f99456;
+button {
+    background-color: #ff6600;
     color: white;
+    padding: 10px 20px;
+    font-size: 1.2em;
     border: none;
     border-radius: 5px;
-    font-size: 1rem;
     cursor: pointer;
-    margin-top: 10px;
+    margin-top: 20px;
 }
+
 button:hover {
-    background-color: #f99456;
+    background-color: #e65c00;
 }
-footer{
-    border: 1px dotted black;
-    background-color: #f99456;
-    color: #ffffff;
-    margin: 1.968503937007874%; 
-    padding: 1.968503937007874%;
-    width: 94,161958568738229755%;
-    clear: both;
+
+button a {
+    color: white;
+    text-decoration: none;
+}
+
+.checkout-button {
+    margin-right: 10px;
+}
+footer {
+    background-color: #ff6600;
+    color: white;
     text-align: center;
+    padding: 10px;
+    margin-top: 30px;
 }
+
 footer p {
-    margin: 0;
-    font-size: 14px;
+    font-size: 0.9em;
 }
 
-
-@media screen and (max-width: 768px) {
-    table {
-        width: 90%;
+@media (max-width: 768px) {
+    .respmenu {
+        flex-direction: column;
+        align-items: flex-start;
     }
 
-    .checkout-button {
-        width: 80%;
+    .menu {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        padding-top: 10px;
+    }
+
+    .menu-toggle:checked + .menu {
+        display: flex;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .menu ul {
+        flex-direction: column;
+    }
+
+    .menu ul li {
+        margin: 10px 0;
     }
 }

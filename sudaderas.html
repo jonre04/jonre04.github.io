@@ -7,7 +7,7 @@
 	</head>
 	<body>
 		<header>
-			<img src="img/logoa.jpg" alt="logoa">
+			<img src="img/logoa.png" alt="logoa">
 			<h1>RUN & GO</h1>
 		</header>
 		<div class="respmenu">
@@ -25,7 +25,7 @@
 				<li><a href="accesorios.html">Accesorios</a></li>
 				<li><a href="carrito.html">Carrito de Compra</a></li>
 				<li><a href="pedido.html"> Pedido</a></li>
-				<li><a href="contacto.html">Contacto</a></li>
+				<li><a href="contacto.html"> Contacto</a></li>
 			</ul>
 		</nav>
 		<main>
@@ -33,27 +33,43 @@
 			<p></p>
 			<Section>
 				<div id="sudadera1">
-					<img src="img/puma-teamliga-1-4-zip-top-jr-393362-65723705-960.png" alt="Sudadera PUMA"><br>
-                    Sudadera Puma teamLIGA 1/4 Zip Top Jr<br>
+					<img src="img/Puma-teamLiga-Training-ZipTop-657236-01-rot-schwarz.png" alt="Sudadera PUMA"><br>
+                    Sudadera Puma teamLIGA 1/4 Zip Top<br>
 					Precio: 39,95 &euro;
-					<button class="checkout-button">Añadir al carrito</button>
+					Precio con Descuento (12%): <strong> 35,16 €</strong><br>
+					<span class="discount-tag">-12%</span><br>
+					<a href="carrito.html">
+						<button class="checkout-button" onclick="addToCart('SUUNTO Race S Reloj Correr', 39.95, 35.16)">Añadir al Carrito</button>
+					</a>
 				</div>
 				<div id="sudadera2">
-					<img src="img/IS-CJ5705-010-1.png" alt=""><br>
-					<br>
-					Precio:  &euro;
-					<button class="checkout-button">Añadir al carrito</button>
+					<img src="img/nike-teniska-ot-tekhnichesko-triko-element-cj5705-sin-standard-fit.png" alt=""><br>
+					Тениска от техническо трико Element CJ5705 Син Standard Fit<br>
+					Precio: 71,99 &euro;
+					<a href="carrito.html">
+						<button class="checkout-button" onclick="addToCart('Тениска от техническо трико Element CJ5705 Син Standard Fit', 71.99)">Añadir al Carrito</button>
+					</a>
 				</div>
 				<div id="sudadera3">
-					<img src="img/under-armour-ua-tech-2-0-1-2-zip-grn-591049-1363286-369-960.png" alt="Sudadera Under Armour"><br>
-                    Sudadera Under Armour UA Tech 2.0 1/2 Zip-GRN<br>;
-					Precio: 42,50 &euro;
-					<button class="checkout-button">Añadir al carrito</button>
+					<img src="img/under-armour-ua-tech-1-2-zip-camiseta-funcional.png" alt="Sudadera Under Armour"><br>
+                    Sudadera Under Armour UA Tech 1/2 Zip<br>;
+					Precio: 44,95 &euro;
+					<a href="carrito.html">
+						<button class="checkout-button" onclick="addToCart('Sudadera Under Armour UA Tech 1/2 Zip', 44.95)">Añadir al Carrito</button>
+					</a>
 				</div>
 			</section>
 		</main>
 		<footer>
-			<p>&copy; 2024 RUN&GO </p>
+			<p>&copy; @2024 [RUN&GO]. Todos los derechos reservados.</p>
 		</footer>
+
+		<script>
+			function addToCart(productName, originalPrice, discountedPrice) {
+			let cart = JSON.parse(localStorage.getItem('cart')) || []; // Obtener el carrito del localStorage
+			cart.push({ name: productName, originalPrice: originalPrice, discountedPrice: discountedPrice }); // Añadir el producto con el precio con descuento al carrito
+			localStorage.setItem('cart', JSON.stringify(cart)); // Guardar el carrito actualizado en el localStorage
+			alert(productName + " ha sido añadido al carrito.");}
+		</script>
 	</body>
 </html>

@@ -1,75 +1,158 @@
 <!doctype html>
 <html>
-	<head>
-		<title>Carrito de Compra</title>
-		<link rel="stylesheet" href="css/carrito.css">
-		<meta name="viewport" content="width=device-width, initial scale=1.0">
-	</head>
-    <body>
-		<header>
-			<img src="img/logoa.jpg" alt="logoa">
-			<h1>RUN & GO</h1>
-		</header>
+  <head>
+    <title>Carrito de Compra</title>
+    <link rel="stylesheet" href="css/carrito.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Incluir FontAwesome para los íconos -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <header>
+      <img src="img/logoa.png" alt="logoa">
+      <h1>RUN & GO</h1>
+    </header>
     <div class="respmenu">
-			<input type="checkbox" id="menu-toggle">
-			<label for="menu-toggle" class="menu-icon">
-				<i class="fas fa-bars"></i> 
-				<i class="fas fa-times"></i> 
-			</label>
-		<nav class="menu">
-			<ul>
-				<li><a href="index.html">Inicio</a></li>
-				<li><a href="catalogo.html">Catalogo</a></li>
-				<li><a href="ropa.html">Ropa</a></li>
-				<li><a href="zapatillas.html">Zapatillas</a></li>
-				<li><a href="accesorios.html">Accesorios</a></li>
-				<li><a href="carrito.html">Carrito de Compra</a></li>
-        		<li><a href="pedido.html"> Pedido</a></li>
-				<li><a href="contacto.html">Contacto</a></li>
-			</ul>
-		</nav>
-        <!DOCTYPE html>
-        <html lang="es">
-        <head>
-          <meta charset="UTF-8">
-          <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          <title>Carrito de Compras</title>
-          <link rel="stylesheet" href="css/carrito.css">
-        </head>
-        <body>
-        <table border="i">
-			<tr>
-				<td><p>Psoducto</p></td>
-				<td><p>Precio/Unidad</p></td>
-				<td><p>nº Unidades</p></td>
-				<td><p>Precio</p></td>
-				<td><button class="remove-item">Eliminar</button></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td><button class="remove-item">Eliminar</button></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td></td>
-				<td><button class="remove-item">Eliminar</button></td>
-			</tr>
-			<tr>
-				<td></td>
-				<td></td>
-				<td><p>Total</p></td>
-				<td></td>
-				<td></td>
-			</tr>
-        </table> 
-		<div class="cart-summary">
-			<button class="checkout-button">Proceder al pago</button>
-		  </div>
-	</body>
+      <input type="checkbox" id="menu-toggle">
+      <label for="menu-toggle" class="menu-icon">
+        <i class="fas fa-bars"></i> 
+        <i class="fas fa-times"></i> 
+      </label>
+    </div>
+    <nav class="menu">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="catalogo.html">Catalogo</a></li>
+        <li><a href="ropa.html">Ropa</a></li>
+        <li><a href="zapatillas.html">Zapatillas</a></li>
+        <li><a href="accesorios.html">Accesorios</a></li>
+        <li><a href="carrito.html">Carrito de Compra</a></li>
+        <li><a href="pedido.html">Pedido</a></li>
+        <li><a href="contacto.html"> Contacto</a></li>
+      </ul>
+    </nav>
+    
+    <main>
+      <h2>Carrito de Compra</h2>
+      <table id="cartTable">
+          <thead>
+              <tr>
+                  <th>Producto</th>
+                  <th>Cantidad</th>
+                  <th>Precio</th>
+                  <th>Total por Producto</th>
+                  <th>Eliminar</th>
+              </tr>
+          </thead>
+          <tbody>
+              <!-- Los productos se agregarán aquí dinámicamente -->
+          </tbody>
+      </table>
+      <div id="totalSection">
+          <p id="totalAmount">Total: 0 €</p>
+      </div>
+      <button class="checkout-button" onclick="proceedToCheckout()">Ir al Pedido</button>
+  </main>
+
+  <footer>
+      <p>&copy; 2024 [RUN&GO]. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+      function loadCart() {
+          let cart = JSON.parse(localStorage.getItem('cart')) || [];
+          let tableBody = document.querySelector('#cartTable tbody'); // Seleccionamos el cuerpo de la tabla
+
+          // Limpiar el contenido actual del cuerpo de la tabla antes de agregar nuevos productos
+          tableBody.innerHTML = '';
+
+          // Verificamos si el carrito está vacío
+          if (cart.length === 0) {
+              tableBody.innerHTML = '<tr><td colspan="5">Tu carrito está vacío.</td></tr>';
+              return; // Si no hay productos en el carrito, no procesamos más
+          }
+
+          // Iterar sobre los productos en el carrito y mostrarlos
+          cart.forEach((item, index) => {
+              let row = tableBody.insertRow();
+              let cell1 = row.insertCell(0);
+              let cell2 = row.insertCell(1);
+              let cell3 = row.insertCell(2);
+              let cell4 = row.insertCell(3);
+              let cell5 = row.insertCell(4);
+
+              // Aseguramos que el precio y cantidad sean valores numéricos válidos
+              let itemPrice = parseFloat(item.price) || 0;
+              let itemQuantity = item.quantity || 1;
+
+              cell1.textContent = item.name;
+              cell2.innerHTML = `<input type="number" value="${itemQuantity}" min="1" onchange="updateTotal()">`; // Campo para cantidad
+              cell3.textContent = itemPrice + " €";
+              
+              // Calcular el total por producto (precio * cantidad)
+              let rowTotal = itemPrice * itemQuantity;
+              cell4.textContent = rowTotal.toFixed(2) + " €"; // Mostrar total por producto
+
+              // Botón de eliminar con ícono de basura
+              cell5.innerHTML = `<button class="delete-button" onclick="removeItem(${index})"><i class="fas fa-trash-alt"></i></button>`;
+          });
+
+          updateTotal(); // Actualizar el total al cargar el carrito
+      }
+
+      function updateTotal() {
+          let cart = JSON.parse(localStorage.getItem('cart')) || [];
+          let total = 0;
+          let table = document.getElementById('cartTable');
+          let rows = table.rows;
+
+          // Recalcular el total basado en la cantidad
+          for (let i = 1; i < rows.length; i++) {
+              let priceText = rows[i].cells[2].textContent;
+              let price = parseFloat(priceText.replace(" €", "").trim()); // Asegurarnos de que estamos extrayendo solo el número
+              let quantity = parseInt(rows[i].cells[1].children[0].value, 10);
+
+              // Verificamos que los valores sean válidos
+              if (isNaN(price) || isNaN(quantity)) {
+                  console.error("Valor inválido en precio o cantidad: ", price, quantity);
+                  continue; // Si el valor es inválido, seguimos con la siguiente fila
+              }
+
+              // Calcular el total de esta fila
+              let rowTotal = price * quantity;
+              rows[i].cells[3].textContent = rowTotal.toFixed(2) + " €"; // Actualizar el total de esa fila
+              total += rowTotal; // Acumulamos el total
+          }
+
+          // Actualizar el total general
+          document.getElementById('totalAmount').textContent = "Total: " + total.toFixed(2) + " €";
+      }
+
+      function proceedToCheckout() {
+          if (localStorage.getItem('cart') && JSON.parse(localStorage.getItem('cart')).length > 0) {
+              window.location.href = "pedido.html"; // Redirige al pedido
+          } else {
+              alert("Tu carrito está vacío.");
+          }
+      }
+
+      function removeItem(index) {
+          let cart = JSON.parse(localStorage.getItem('cart')) || [];
+          
+          // Eliminar el artículo seleccionado
+          cart.splice(index, 1);
+          localStorage.setItem('cart', JSON.stringify(cart));
+
+          // Recargar el carrito para reflejar los cambios
+          loadCart();
+      }
+
+      // Cargar el carrito al cargar la página
+      window.onload = loadCart;
+  </script>
+</body>
 </html>
+
+
+
         
