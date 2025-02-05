@@ -1,89 +1,96 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<title>Relojes</title>
-		<meta name="viewport" content="width=device-width, initial scale=1.0">
-		<link rel="stylesheet" href="css/relojes.css">
-	</head>
-	<body>
-		<header>
-			<img src="img/logoa.png" alt="logoa">
-			<h1>RUN & GO</h1>
-		</header>
-		<div class="respmenu">
-			<input type="checkbox" id="menu-toggle">
-			<label for="menu-toggle" class="menu-icon">
-				<i class="fas fa-bars"></i> 
-				<i class="fas fa-times"></i> 
-			</label>
-		<nav class="menu">
-			<ul>
-				<li><a href="index.html">Inicio</a></li>
-				<li><a href="catalogo.html">Catalogo</a></li>
-				<li><a href="ropa.html">Ropa</a></li>
-				<li><a href="zapatillas.html">Zapatillas</a></li>
-				<li><a href="accesorios.html">Accesorios</a></li>
-				<li><a href="carrito.html">Carrito de Compra</a></li>
-				<li><a href="pedido.html"> Pedido</a></li>
-				<li><a href="contacto.html"> Contacto</a></li>
-    		</ul>
-		</nav>
-		<main>
-			<h2>Relojes</h2>
-			<p></p>
-			<Section>
-				<div id="reloj1">
-					<img src="img/1673365857-41HKbv4BqkL._SL500_.png" alt="Reloj Polar Pacer"><br>
-					Polar Pacer Reloj De Running Con G Negro<br>
-					<del>Precio: 349,90 &euro; </del><br>
-					Precio con Descuento (15%): <strong> 297,42 €</strong><br>
-					<span class="discount-tag">-15%</span><br>
-					<a href="carrito.html">
-						<button class="checkout-button" onclick="addToCart('Polar Pacer Reloj De Running Con G Negro', 349.90, 297.42)">Añadir al Carrito</button>
-					</a>
-				</div>
-				<div id="reloj2">
-					<img src="img/reloj-multisport-premium-gps-mapas-spo2-ecg-vantage-v3-blanconaranja.png" alt="Reloj Multisport Premium"><br>
-					Reloj Multisport Premium-GPS, Mapas, SpO2, ECG-Vantage V3 Blanco/Narañja<br>
-					<del>Precio: 599,90 &euro; </del><br>
-					Precio con Descuento (15%): <strong> 509,92 €</strong><br>
-					<span class="discount-tag">-15%</span><br>
-					<a href="carrito.html">
-						<button class="checkout-button" onclick="addToCart('Reloj Multisport Premium-GPS, Mapas, SpO2, ECG-Vantage V3 Blanco/Narañja<br>', 599.90, 509.92)">Añadir al Carrito</button>
-					</a>
-				</div>
-				<div id="reloj3">
-					<img src="img/garmin-reloj-forerunner-265.png" alt="Reloj Garmin"><br>
-					Garmin Reloj Forerunner 265<br>
-					<del>Precio: 395,99 &euro;</del> <br>
-					Precio con Descuento (15%): <strong> 336,59 €</strong><br>
-					<span class="discount-tag">-15%</span><br>
-					<a href="carrito.html">
-						<button class="checkout-button" onclick="addToCart('Garmin Reloj Forerunner 265', 395.99, 336.59)">Añadir al Carrito</button>
-					</a>
-				</div>
-				<div id="reloj4">
-					<img src="img/71+gi3Ua-KL._AC_SX522_.png" alt="Reloj SUUNTO Race S"><br>
-					SUUNTO Race S Reloj Correr <br>
-					<del>Precio: 349,99 &euro;</del> <br>
-					Precio con Descuento (15%): <strong> 297,49€</strong><br>
-					<span class="discount-tag">-15%</span><br>
-					<a href="carrito.html">
-						<button class="checkout-button" onclick="addToCart('SUUNTO Race S Reloj Correr', 349.99, 297.49)">Añadir al Carrito</button>
-					</a>
-				</div>
-			</section>
-		</main>
-		<footer>
-			<p>&copy; @2024 [RUN&GO]. Todos los derechos reservados.</p>
-		</footer>
-		<script>
-		function addToCart(productName, originalPrice, discountedPrice) {
-		let cart = JSON.parse(localStorage.getItem('cart')) || []; // Obtener el carrito del localStorage
-		cart.push({ name: productName, originalPrice: originalPrice, discountedPrice: discountedPrice }); // Añadir el producto con el precio con descuento al carrito
-		localStorage.setItem('cart', JSON.stringify(cart)); // Guardar el carrito actualizado en el localStorage
-		alert(productName + " ha sido añadido al carrito.");}
-		</script>
-	</body>
+  <head>
+    <title>Relojes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/relojes.css">
+  </head>
+  <body>
+    <header>
+      <img src="img/logoa.png" alt="logoa">
+      <h1>RUN & GO</h1>
+    </header>
+    <div class="respmenu">
+      <input type="checkbox" id="menu-toggle">
+      <label for="menu-toggle" class="menu-icon">
+        <i class="fas fa-bars"></i>
+        <i class="fas fa-times"></i>
+      </label>
+    </div>
+    <nav class="menu">
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="catalogo.html">Catalogo</a></li>
+        <li><a href="ropa.html">Ropa</a></li>
+        <li><a href="zapatillas.html">Zapatillas</a></li>
+        <li><a href="accesorios.html">Accesorios</a></li>
+        <li><a href="carrito.html">Carrito de Compra</a></li>
+        <li><a href="pedido.html">Pedido</a></li>
+        <li><a href="contacto.html"> Contacto</a></li>
+      </ul>
+    </nav>
+    <main>
+      <h2>Relojes</h2>
+      <section>
+        <div id="reloj1">
+          <img src="img/1673365857-41HKbv4BqkL._SL500_.png" alt="Reloj Polar Pacer"><br>
+          Polar Pacer Reloj De Running Con G Negro<br>
+          <del>Precio: 349,90 &euro;</del><br>
+          Precio con Descuento (15%): <strong> 297,42 €</strong><br>
+          <span class="discount-tag">-15%</span><br>
+          <a>
+            <button class="checkout-button" onclick="addToCart('Polar Pacer Reloj De Running Con G Negro', 349.90, 297.42)">Añadir al Carrito</button>
+          </a>
+        </div>
+        <div id="reloj2">
+          <img src="img/reloj-multisport-premium-gps-mapas-spo2-ecg-vantage-v3-blanconaranja.png" alt="Reloj Multisport Premium"><br>
+          Reloj Multisport Premium-GPS, Mapas, SpO2, ECG-Vantage V3 Blanco/Naranja<br>
+          <del>Precio: 599,90 &euro;</del><br>
+          Precio con Descuento (15%): <strong> 509,92 €</strong><br>
+          <span class="discount-tag">-15%</span><br>
+          <a>
+            <button class="checkout-button" onclick="addToCart('Reloj Multisport Premium-GPS, Mapas, SpO2, ECG-Vantage V3 Blanco/Naranja', 599.90, 509.92)">Añadir al Carrito</button>
+          </a>
+        </div>
+        <div id="reloj3">
+          <img src="img/garmin-reloj-forerunner-265.png" alt="Reloj Garmin"><br>
+          Garmin Reloj Forerunner 265<br>
+          <del>Precio: 395,99 &euro;</del><br>
+          Precio con Descuento (15%): <strong> 336,59 €</strong><br>
+          <span class="discount-tag">-15%</span><br>
+          <a>
+            <button class="checkout-button" onclick="addToCart('Garmin Reloj Forerunner 265', 395.99, 336.59)">Añadir al Carrito</button>
+          </a>
+        </div>
+        <div id="reloj4">
+          <img src="img/71+gi3Ua-KL._AC_SX522_.png" alt="Reloj SUUNTO Race S"><br>
+          SUUNTO Race S Reloj Correr <br>
+          <del>Precio: 349,99 &euro;</del><br>
+          Precio con Descuento (15%): <strong> 297,49€</strong><br>
+          <span class="discount-tag">-15%</span><br>
+          <a>
+            <button class="checkout-button" onclick="addToCart('SUUNTO Race S Reloj Correr', 349.99, 297.49)">Añadir al Carrito</button>
+          </a>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2024 [RUN&GO]. Todos los derechos reservados.</p>
+    </footer>
+
+    <script>
+      function addToCart(productName, originalPrice, discountedPrice) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || []; // Obtener el carrito del localStorage
+        cart.push({
+          name: productName,
+          originalPrice: originalPrice,
+          discountedPrice: discountedPrice, // Guardar también el precio con descuento
+          quantity: 1 // Iniciar con una cantidad de 1
+        });
+        localStorage.setItem('cart', JSON.stringify(cart)); // Guardar el carrito actualizado en el localStorage
+        alert(productName + " ha sido añadido al carrito.");
+      }
+    </script>
+  </body>
 </html>
 

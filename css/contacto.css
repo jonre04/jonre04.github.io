@@ -8,7 +8,6 @@ body {
 
 header {
     background-color: #ff6600;
-    background-color: #333;
     color: white;
     padding: 10px 0;
     text-align: center;
@@ -26,7 +25,13 @@ header h1 {
     font-size: 2em;
     font-weight: bold;
 }
-
+nav {
+    background-color: #ff6600;
+   border: 1px dashed black;
+   margin: 1,5%;
+   padding: 1,5%;
+   width: 94,161958568738229755178907721281%;
+}
 .respmenu {
     display: flex;
     justify-content: space-between;

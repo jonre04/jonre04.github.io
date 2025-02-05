@@ -35,33 +35,33 @@
 				<div id="clavos1">
 					<img src="img/clavos-6mm.png" alt="clavos-6mm"><br>
 					Clavos 6mm <br>
-					Precio: 5,99 &euro;
-					<a href="carrito.html">
-						<button class="checkout-button" onclick="addToCart(' Clavos 6mm', 5.99)">Añadir al Carrito</button>
+					Precio: 5,99 &euro;<br>
+					<a>
+						<button class="checkout-button" onclick="addToCart(' Clavos 6mm', 5.99, 5.99)">Añadir al Carrito</button>
 					</a>
 				</div>
 				<div id="clavos2">
 					<img src="img/clavos-9mm.png" alt="clavos-9mm"><br>
 					Clavos 9mm<br>
-					Precio: 5,99 &euro;
-					<a href="carrito.html">
-						<button class="checkout-button" onclick="addToCart(' Clavos 9mm', 5.99)">Añadir al Carrito</button>
+					Precio: 5,99 &euro;<br>
+					<a>
+						<button class="checkout-button" onclick="addToCart(' Clavos 9mm', 5.99, 5.99)">Añadir al Carrito</button>
 					</a>
 				</div>
 				<div id="clavos3">
 					<img src="img/clavos-12mm.png" alt="clavos-12mm"><br>
 					Clavos 12mm<br>
-					Precio: 5,99 &euro;
-					<a href="carrito.html">
-						<button class="checkout-button" onclick="addToCart(' Clavos 12mm', 5.99)">Añadir al Carrito</button>
+					Precio: 5,99 &euro;<br>
+					<a>
+						<button class="checkout-button" onclick="addToCart(' Clavos 12mm', 5.99, 5.99)">Añadir al Carrito</button>
 					</a>
 				</div>
 				<div id="clavos4">
 					<img src="img/clavos-15mm.png" alt="clavos-15mm"><br>
 					Clavos 15mm<br>
-					Precio: 5,99 &euro;
-					<a href="carrito.html">
-						<button class="checkout-button" onclick="addToCart(' Clavos 15mm', 5.99)">Añadir al Carrito</button>
+					Precio: 5,99 &euro;<br>
+					<a>
+						<button class="checkout-button" onclick="addToCart(' Clavos 15mm', 5.99, 5.99)">Añadir al Carrito</button>
 					</a>
 				</div>
 			</section>
@@ -72,11 +72,17 @@
 
 		<script>
 			function addToCart(productName, originalPrice, discountedPrice) {
-			let cart = JSON.parse(localStorage.getItem('cart')) || []; // Obtener el carrito del localStorage
-			cart.push({ name: productName, originalPrice: originalPrice, discountedPrice: discountedPrice }); // Añadir el producto con el precio con descuento al carrito
-			localStorage.setItem('cart', JSON.stringify(cart)); // Guardar el carrito actualizado en el localStorage
-			alert(productName + " ha sido añadido al carrito.");}
-			</script>
+			  let cart = JSON.parse(localStorage.getItem('cart')) || []; // Obtener el carrito del localStorage
+			  cart.push({
+				name: productName,
+				originalPrice: originalPrice,
+				discountedPrice: discountedPrice, // Guardar también el precio con descuento
+				quantity: 1 // Iniciar con una cantidad de 1
+			  });
+			  localStorage.setItem('cart', JSON.stringify(cart)); // Guardar el carrito actualizado en el localStorage
+			  alert(productName + " ha sido añadido al carrito.");
+		}
+		</script>
 	</body>
 </html>
 

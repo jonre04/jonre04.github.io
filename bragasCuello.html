@@ -37,24 +37,24 @@
 					<img src="img/braga-de-cuello-premium-cestrada-starry-n-az-adulto-multicolor.png" alt=""><br>
 					Braga de cuello Premium C.Estrada Starry N AZ Adulto Multicolor<br>
 					Precio: 25,99 &euro;<br>
-					<a href="carrito.html">
-						<button class="checkout-button" onclick="addToCart('Braga de cuello Premium C.Estrada Starry N AZ Adulto Multicolor', 25.99)">Añadir al Carrito</button>
+					<a>
+						<button class="checkout-button" onclick="addToCart('Braga de cuello Premium C.Estrada Starry N AZ Adulto Multicolor', 25.99, 25.99)">Añadir al Carrito</button>
 					</a>
 				</div>
 				<div id="bragaCuello2">
 					<img src="img/braga-de-cuello-buff-original-ecostrech.png" alt=""><br>
 					BRAGA DE CUELLO BUFF ORIGINAL ECOSTRECH<br>
 					Precio: 18,95 &euro;<br>
-					<a href="carrito.html">
-						<button class="checkout-button" onclick="addToCart('BRAGA DE CUELLO BUFF ORIGINAL ECOSTRECH', 18.95)">Añadir al Carrito</button>
+					<a>
+						<button class="checkout-button" onclick="addToCart('BRAGA DE CUELLO BUFF ORIGINAL ECOSTRECH', 18.95, 18.95)">Añadir al Carrito</button>
 					</a>
 				</div>
 				<div id="bragaCuello3">
 					<img src="img/braga-de-cuello-buff-polar-prints.png" alt=""><br>
                 	BRAGA DE CUELLO BUFF POLAR PRINTS<br>
 					Precio: 29,95 &euro;<br>
-					<a href="carrito.html">
-						<button class="checkout-button" onclick="addToCart('BRAGA DE CUELLO BUFF POLAR PRINTS', 29.95)">Añadir al Carrito</button>
+					<a>
+						<button class="checkout-button" onclick="addToCart('BRAGA DE CUELLO BUFF POLAR PRINTS', 29.95, 29.95)">Añadir al Carrito</button>
 					</a>
 				</div>
 			</Section>
@@ -63,11 +63,17 @@
 			<p>&copy; @2024 [RUN&GO]. Todos los derechos reservados.</p>
 		</footer>
 		<script>
-			function addToCart(productName, originalPrice, discountedPrice) {
-			let cart = JSON.parse(localStorage.getItem('cart')) || []; // Obtener el carrito del localStorage
-			cart.push({ name: productName, originalPrice: originalPrice, discountedPrice: discountedPrice }); // Añadir el producto con el precio con descuento al carrito
-			localStorage.setItem('cart', JSON.stringify(cart)); // Guardar el carrito actualizado en el localStorage
-			alert(productName + " ha sido añadido al carrito.");}
-		</script>
+      function addToCart(productName, originalPrice, discountedPrice) {
+        let cart = JSON.parse(localStorage.getItem('cart')) || []; // Obtener el carrito del localStorage
+        cart.push({
+          name: productName,
+          originalPrice: originalPrice,
+          discountedPrice: discountedPrice, // Guardar también el precio con descuento
+          quantity: 1 // Iniciar con una cantidad de 1
+        });
+        localStorage.setItem('cart', JSON.stringify(cart)); // Guardar el carrito actualizado en el localStorage
+        alert(productName + " ha sido añadido al carrito.");
+      }
+    </script>
 	</body>
 </html>

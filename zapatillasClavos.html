@@ -37,7 +37,7 @@
 					evoSPEED Distance Nitro Elite<br>
 					Precio: 180,00 &euro;
 					<a>
-						<button class="checkout-button" onclick="addToCart('evoSPEED Distance Nitro Elite', 180.00)">Añadir al Carrito</button>
+						<button class="checkout-button" onclick="addToCart('evoSPEED Distance Nitro Elite', 180.00, 180.00)">Añadir al Carrito</button>
 					</a>
 				</div>
 				<div id="zapatillaClavos2">
@@ -45,7 +45,7 @@
 					Zapatilla Adizero Finesse<br>
 					Precio: 160,00 &euro;
 					<a>
-						<button class="checkout-button" onclick="addToCart('Zapatilla Adizero Finesse', 160.00)">Añadir al Carrito</button>
+						<button class="checkout-button" onclick="addToCart('Zapatilla Adizero Finesse', 160.00, 160.00)">Añadir al Carrito</button>
 					</a>
 				</div>
 				<div id="zapatillaClavos3">
@@ -53,7 +53,7 @@
 					ASICS Metaspeed LD 2<br>
 					Precio: 388,44 &euro;
 					<a>
-						<button class="checkout-button" onclick="addToCart('ASICS Metaspeed LD 2', 388.44)">Añadir al Carrito</button>
+						<button class="checkout-button" onclick="addToCart('ASICS Metaspeed LD 2', 388.44, 388.44)">Añadir al Carrito</button>
 					</a>
 				</div>
 			</section>
@@ -64,10 +64,16 @@
 
 		<script>
 			function addToCart(productName, originalPrice, discountedPrice) {
-			let cart = JSON.parse(localStorage.getItem('cart')) || []; // Obtener el carrito del localStorage
-			cart.push({ name: productName, originalPrice: originalPrice, discountedPrice: discountedPrice }); // Añadir el producto con el precio con descuento al carrito
-			localStorage.setItem('cart', JSON.stringify(cart)); // Guardar el carrito actualizado en el localStorage
-			alert(productName + " ha sido añadido al carrito.");}
-		</script>
+			  let cart = JSON.parse(localStorage.getItem('cart')) || []; // Obtener el carrito del localStorage
+			  cart.push({
+				name: productName,
+				originalPrice: originalPrice,
+				discountedPrice: discountedPrice, // Guardar también el precio con descuento
+				quantity: 1 // Iniciar con una cantidad de 1
+			  });
+			  localStorage.setItem('cart', JSON.stringify(cart)); // Guardar el carrito actualizado en el localStorage
+			  alert(productName + " ha sido añadido al carrito.");
+			}
+		  </script>
 	</body>
 </html>

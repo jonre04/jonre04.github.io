@@ -38,7 +38,7 @@
 					Precio: 39,95 &euro;
 					Precio con Descuento (12%): <strong> 35,16 €</strong><br>
 					<span class="discount-tag">-12%</span><br>
-					<a href="carrito.html">
+					<a>
 						<button class="checkout-button" onclick="addToCart('SUUNTO Race S Reloj Correr', 39.95, 35.16)">Añadir al Carrito</button>
 					</a>
 				</div>
@@ -46,16 +46,16 @@
 					<img src="img/nike-teniska-ot-tekhnichesko-triko-element-cj5705-sin-standard-fit.png" alt=""><br>
 					Тениска от техническо трико Element CJ5705 Син Standard Fit<br>
 					Precio: 71,99 &euro;
-					<a href="carrito.html">
-						<button class="checkout-button" onclick="addToCart('Тениска от техническо трико Element CJ5705 Син Standard Fit', 71.99)">Añadir al Carrito</button>
+					<a>
+						<button class="checkout-button" onclick="addToCart('Тениска от техническо трико Element CJ5705 Син Standard Fit', 71.99, 71.99)">Añadir al Carrito</button>
 					</a>
 				</div>
 				<div id="sudadera3">
 					<img src="img/under-armour-ua-tech-1-2-zip-camiseta-funcional.png" alt="Sudadera Under Armour"><br>
                     Sudadera Under Armour UA Tech 1/2 Zip<br>;
 					Precio: 44,95 &euro;
-					<a href="carrito.html">
-						<button class="checkout-button" onclick="addToCart('Sudadera Under Armour UA Tech 1/2 Zip', 44.95)">Añadir al Carrito</button>
+					<a>
+						<button class="checkout-button" onclick="addToCart('Sudadera Under Armour UA Tech 1/2 Zip', 44.95, 44.95)">Añadir al Carrito</button>
 					</a>
 				</div>
 			</section>
@@ -66,10 +66,16 @@
 
 		<script>
 			function addToCart(productName, originalPrice, discountedPrice) {
-			let cart = JSON.parse(localStorage.getItem('cart')) || []; // Obtener el carrito del localStorage
-			cart.push({ name: productName, originalPrice: originalPrice, discountedPrice: discountedPrice }); // Añadir el producto con el precio con descuento al carrito
-			localStorage.setItem('cart', JSON.stringify(cart)); // Guardar el carrito actualizado en el localStorage
-			alert(productName + " ha sido añadido al carrito.");}
-		</script>
+			  let cart = JSON.parse(localStorage.getItem('cart')) || []; // Obtener el carrito del localStorage
+			  cart.push({
+				name: productName,
+				originalPrice: originalPrice,
+				discountedPrice: discountedPrice, // Guardar también el precio con descuento
+				quantity: 1 // Iniciar con una cantidad de 1
+			  });
+			  localStorage.setItem('cart', JSON.stringify(cart)); // Guardar el carrito actualizado en el localStorage
+			  alert(productName + " ha sido añadido al carrito.");
+			}
+		  </script>
 	</body>
 </html>

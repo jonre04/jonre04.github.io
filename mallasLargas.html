@@ -37,25 +37,25 @@
 				<div id="mallaLarga1">
 					<img src="img/Mallas_Largas_Winter.png" alt="Mallas Joma"><br>
 					Mallas largas Winter negro<br>
-					Precio: 34,00 &euro;
-					<a href="carrito.html">
-						<button class="checkout-button" onclick="addToCart('Mallas largas Winter negro', 34.00)">Añadir al Carrito</button>
+					Precio: 34,00 &euro;<br>
+					<a>
+						<button class="checkout-button" onclick="addToCart('Mallas largas Winter negro', 34.00, 34.00)">Añadir al Carrito</button>
 					</a>
 				</div>
 				<div id="mallaLarga2">
 					<img src="img/medias-1000730849-00-P-X-20211119163745.png" alt="Mallas Spyro"><br>
 					Malla Running P-MASKE<br>
-					Precio: 24,99 &euro;
-					<a href="carrito.html">
-						<button class="checkout-button" onclick="addToCart(' Malla Running P-MASKE', 24.99)">Añadir al Carrito</button>
+					Precio: 24,99 &euro;<br>
+					<a>
+						<button class="checkout-button" onclick="addToCart(' Malla Running P-MASKE', 24.99, 24.99)">Añadir al Carrito</button>
 					</a>
 				</div>
 				<div id="mallaLarga3">
 					<img src="img/under-armour-heatgear-armour-leggings-ropa-de-compresion-detail-2.png" alt="Malla Under Armour"><br>
                 	Malla larga Under Armour HeatGear negro<br>
-					Precio: 44,99 &euro;
-					<a href="carrito.html">
-						<button class="checkout-button" onclick="addToCart(' Malla larga Under Armour HeatGear negro', 44.99)">Añadir al Carrito</button>
+					Precio: 44,99 &euro;<br>
+					<a>
+						<button class="checkout-button" onclick="addToCart(' Malla larga Under Armour HeatGear negro', 44.99, 44.99)">Añadir al Carrito</button>
 					</a>
 				</div>
 			</section>
@@ -66,10 +66,16 @@
 
 		<script>
 			function addToCart(productName, originalPrice, discountedPrice) {
-			let cart = JSON.parse(localStorage.getItem('cart')) || []; // Obtener el carrito del localStorage
-			cart.push({ name: productName, originalPrice: originalPrice, discountedPrice: discountedPrice }); // Añadir el producto con el precio con descuento al carrito
-			localStorage.setItem('cart', JSON.stringify(cart)); // Guardar el carrito actualizado en el localStorage
-			alert(productName + " ha sido añadido al carrito.");}
-		</script>
+			  let cart = JSON.parse(localStorage.getItem('cart')) || []; // Obtener el carrito del localStorage
+			  cart.push({
+				name: productName,
+				originalPrice: originalPrice,
+				discountedPrice: discountedPrice, // Guardar también el precio con descuento
+				quantity: 1 // Iniciar con una cantidad de 1
+			  });
+			  localStorage.setItem('cart', JSON.stringify(cart)); // Guardar el carrito actualizado en el localStorage
+			  alert(productName + " ha sido añadido al carrito.");
+			}
+		  </script>
 	</body>
 </html>

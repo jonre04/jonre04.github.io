@@ -29,13 +29,13 @@
     		</ul>
 		</nav>
 		<main>
-			<h2>Clavos</h2>
+			<h2>LLave para Clavos</h2>
 			<div id="llave">
 				<img src="img/llave-clavos.png" alt="llave"><br>
 				Llave para Clavos<br>
-				Precio: 6,99 &euro;
-				<a href="carrito.html">
-					<button class="checkout-button" onclick="addToCart(' Llave para Clavos', 6.99)">Añadir al Carrito</button>
+				Precio: 6,99 &euro;<br>
+				<a>
+					<button class="checkout-button" onclick="addToCart(' Llave para Clavos', 6.99, 6.99)">Añadir al Carrito</button>
 					</a>
 				</div>
 			</section>
@@ -46,10 +46,16 @@
 
 		<script>
 			function addToCart(productName, originalPrice, discountedPrice) {
-			let cart = JSON.parse(localStorage.getItem('cart')) || []; // Obtener el carrito del localStorage
-			cart.push({ name: productName, originalPrice: originalPrice, discountedPrice: discountedPrice }); // Añadir el producto con el precio con descuento al carrito
-			localStorage.setItem('cart', JSON.stringify(cart)); // Guardar el carrito actualizado en el localStorage
-			alert(productName + " ha sido añadido al carrito.");}
+			  let cart = JSON.parse(localStorage.getItem('cart')) || []; // Obtener el carrito del localStorage
+			  cart.push({
+				name: productName,
+				originalPrice: originalPrice,
+				discountedPrice: discountedPrice, // Guardar también el precio con descuento
+				quantity: 1 // Iniciar con una cantidad de 1
+			  });
+			  localStorage.setItem('cart', JSON.stringify(cart)); // Guardar el carrito actualizado en el localStorage
+			  alert(productName + " ha sido añadido al carrito.");
+		}
 		</script>
 	</body>
 </html>

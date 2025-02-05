@@ -36,8 +36,8 @@
 					<img src="img/Guantes-para-correr-finos-Unigear.png" alt=""><br>
 					Guantes para correr finos Unigear<br>
 					Precio: 14,99 &euro;<br>
-					<a href="carrito.html">
-						<button class="checkout-button" onclick="addToCart(' Guantes para correr finos Unigear', 14.99)">Añadir al Carrito</button>
+					<a>
+						<button class="checkout-button" onclick="addToCart(' Guantes para correr finos Unigear', 14.99, 14.99)">Añadir al Carrito</button>
 					</a>
 					
 				</div>
@@ -45,16 +45,16 @@
 					<img src="img/Guantes-para-correr-impermeables-Under-Armour.png" alt="Guantes Under Armour"><br>
 					Guantes para correr impermeables Under Armour<br>
 					Precio: 23,99 &euro;<br>
-					<a href="carrito.html">
-						<button class="checkout-button" onclick="addToCart(' Guantes para correr impermeables Under Armour', 23.99)">Añadir al Carrito</button>
+					<a>
+						<button class="checkout-button" onclick="addToCart(' Guantes para correr impermeables Under Armour', 23.99, 29.99)">Añadir al Carrito</button>
 					</a>
 				</div>
 				<div id="guantes3">
 					<img src="img/nike-guantes-pacer-lightweight-rg.png" alt="Guantes Nike"><br>
                 	Nike Guantes Pacer lightweight RG<br>
 					Precio: 19,99 &euro;<br>
-					<a href="carrito.html">
-						<button class="checkout-button" onclick="addToCart(' Nike Guantes Pacer lightweight RG', 19.99)">Añadir al Carrito</button>
+					<a>
+						<button class="checkout-button" onclick="addToCart(' Nike Guantes Pacer lightweight RG', 19.99, 19.99)">Añadir al Carrito</button>
 					</a>
 				</div>
 			</Section>
@@ -64,10 +64,16 @@
 		</footer>
 		<script>
 			function addToCart(productName, originalPrice, discountedPrice) {
-			let cart = JSON.parse(localStorage.getItem('cart')) || []; // Obtener el carrito del localStorage
-			cart.push({ name: productName, originalPrice: originalPrice, discountedPrice: discountedPrice }); // Añadir el producto con el precio con descuento al carrito
-			localStorage.setItem('cart', JSON.stringify(cart)); // Guardar el carrito actualizado en el localStorage
-			alert(productName + " ha sido añadido al carrito.");}
-			</script>
+			  let cart = JSON.parse(localStorage.getItem('cart')) || []; // Obtener el carrito del localStorage
+			  cart.push({
+				name: productName,
+				originalPrice: originalPrice,
+				discountedPrice: discountedPrice, // Guardar también el precio con descuento
+				quantity: 1 // Iniciar con una cantidad de 1
+			  });
+			  localStorage.setItem('cart', JSON.stringify(cart)); // Guardar el carrito actualizado en el localStorage
+			  alert(productName + " ha sido añadido al carrito.");
+		}
+		</script>
 	</body>
 </html>

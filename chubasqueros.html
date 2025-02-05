@@ -38,24 +38,24 @@
 					<img src="img/asics-fujitrail-packable-windbreaker-chaqueta-de-running.png" alt="Chubasquero Asics"><br>
 					FUJITRAIL PACKABLE JACKET<br>
 					Precio: 120,00 &euro;<br>
-					<a href="carrito.html">
-						<button class="checkout-button" onclick="addToCart('FUJITRAIL PACKABLE JACKET', 120.00)">Añadir al Carrito</button>
+					<a>
+						<button class="checkout-button" onclick="addToCart('FUJITRAIL PACKABLE JACKET', 120.00, 120.00)">Añadir al Carrito</button>
 					</a>
 				</div>
 				<div id="chubasquero2">
 					<img src="img/45c068e21c644582ad9fae5c4c324023.png" alt="Chubasquero Adidas"><br>
 					adidas Performance RAIN.RDY Impermeable blac<br>
 					Precio: 149,95 &euro;<br>
-					<a href="carrito.html">
-						<button class="checkout-button" onclick="addToCart('adidas Performance RAIN.RDY Impermeable blac', 149.95)">Añadir al Carrito</button>
+					<a>
+						<button class="checkout-button" onclick="addToCart('adidas Performance RAIN.RDY Impermeable blac', 149.95, 149.95)">Añadir al Carrito</button>
 					</a>
 				</div>
 				<div id="chubasquero3">
 					<img src="img/chubasquero-salomon-bonatti-race-wp-jkt-poseidon-men.png" alt="Chubasquero Salomon"><br>
                 	SALOMON BONATTI RACE WP JKT<br>
 					Precio: 150.00 &euro;<br>
-					<a href="carrito.html">
-						<button class="checkout-button" onclick="addToCart('SALOMON BONATTI RACE WP JKT', 150.00)">Añadir al Carrito</button>
+					<a>
+						<button class="checkout-button" onclick="addToCart('SALOMON BONATTI RACE WP JKT', 150.00, 150.00)">Añadir al Carrito</button>
 					</a>
 				</div>
 			</Section>
@@ -65,10 +65,16 @@
 		</footer>
 		<script>
 			function addToCart(productName, originalPrice, discountedPrice) {
-			let cart = JSON.parse(localStorage.getItem('cart')) || []; // Obtener el carrito del localStorage
-			cart.push({ name: productName, originalPrice: originalPrice, discountedPrice: discountedPrice }); // Añadir el producto con el precio con descuento al carrito
-			localStorage.setItem('cart', JSON.stringify(cart)); // Guardar el carrito actualizado en el localStorage
-			alert(productName + " ha sido añadido al carrito.");}
-			</script>
+			  let cart = JSON.parse(localStorage.getItem('cart')) || []; // Obtener el carrito del localStorage
+			  cart.push({
+				name: productName,
+				originalPrice: originalPrice,
+				discountedPrice: discountedPrice, // Guardar también el precio con descuento
+				quantity: 1 // Iniciar con una cantidad de 1
+			  });
+			  localStorage.setItem('cart', JSON.stringify(cart)); // Guardar el carrito actualizado en el localStorage
+			  alert(productName + " ha sido añadido al carrito.");
+		}
+		</script>
 	</body>
 </html>

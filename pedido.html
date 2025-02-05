@@ -67,32 +67,52 @@
                     <td><input type="text" name="probincia" required></td>
                 </tr>
             </table>
-                <button type="button" class="checkout-button" onclick="validateForm()">Siguiente</button>ha
+				<a href="pedido2.html">
+					<button type="button" class="checkout-button" onclick="validateForm()">Siguiente</button>
+				</a>
         </main>
         <footer>
 			<p>&copy; @2024 [RUN&GO]. Todos los derechos reservados.</p>
 		</footer>
 
         <script>
-			// Función para validar el formulario
-			function validateForm() {
-				// Obtener todos los campos del formulario
-				let form = document.getElementById("pedidoForm");
-				let inputs = form.getElementsByTagName("input");
-				let valid = true;
-				// Recorrer los campos para verificar si están vacíos
-				for (let i = 0; i < inputs.length; i++) {
-					if (inputs[i].value.trim() === "") {
-						valid = false;
-						alert("Por favor, completa todos los campos antes de continuar.");
-						break;
-					}
-				}
-				// Si todos los campos están llenos, proceder al siguiente paso
-				if (valid) {
-					window.location.href = "pedido2.html"; // Redirige a la siguiente página
-				}
-			}
+		function saveFormData() {
+    	let form = document.getElementById('pedidoForm');
+		let formData = {
+        nombre: form['nombre'].value,
+        apellidos: form['apellidos'].value,
+        email: form['email'].value,
+        telefono: form['nºTelefono'].value,
+        direccion: form['dirección de envio'].value,
+        localidad: form['localidad'].value,
+        codigoPostal: form['codigo postal'].value,
+        provincia: form['probincia'].value
+    	};
+
+    	localStorage.setItem('pedidoData', JSON.stringify(formData));
+		}
+
+		function loadFormData() {
+   		 let formData = JSON.parse(localStorage.getItem('pedidoData'));
+    	if (formData) {
+        document.querySelector('[name="nombre"]').value = formData.nombre || '';
+        document.querySelector('[name="apellidos"]').value = formData.apellidos || '';
+        document.querySelector('[name="email"]').value = formData.email || '';
+        document.querySelector('[name="nºTelefono"]').value = formData.telefono || '';
+        document.querySelector('[name="dirección de envio"]').value = formData.direccion || '';
+        document.querySelector('[name="localidad"]').value = formData.localidad || '';
+        document.querySelector('[name="codigo postal"]').value = formData.codigoPostal || '';
+        document.querySelector('[name="probincia"]').value = formData.provincia || '';
+   		}
+		}
+
+		window.onload = loadFormData;  // Cargar los datos al cargar la página
+
+		function validateForm() {
+    // Validar campos...
+    saveFormData();  // Guardar los datos antes de ir al siguiente paso
+    window.location.href= "pedido2.html"; // Redirigir
+	}
 		</script>
 	</body>
 </html>

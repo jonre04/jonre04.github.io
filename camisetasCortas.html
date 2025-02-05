@@ -4,30 +4,31 @@
 		<title>Camisetas</title>
 		<meta name="viewport" content="width=device-width, initial scale=1.0">
 		<link rel="stylesheet" href="css/camisetasCortas.css">
+		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 	</head>
 	<body>
 		<header>
 			<img src="img/logoa.png" alt="logoa">
 			<h1>RUN & GO</h1>
+			<div class="respmenu">
+				<input type="checkbox" id="menu-toggle">
+				<label for="menu-toggle" class="menu-icon">
+					<i class="fas fa-bars"></i> <!-- Ícono de hamburguesa -->
+				</label>
+				<nav class="menu">
+					<ul>
+						<li><a href="index.html">Inicio</a></li>
+						<li><a href="catalogo.html">Catalogo</a></li>
+						<li><a href="ropa.html">Ropa</a></li>
+						<li><a href="zapatillas.html">Zapatillas</a></li>
+						<li><a href="accesorios.html">Accesorios</a></li>
+						<li><a href="carrito.html">Carrito de Compra</a></li>
+						<li><a href="pedido.html"> Pedido</a></li>
+						<li><a href="contacto.html"> Contacto</a></li>
+					</ul>
+				</nav>
+			</div>
 		</header>
-		<div class="respmenu">
-			<input type="checkbox" id="menu-toggle">
-			<label for="menu-toggle" class="menu-icon">
-				<i class="fas fa-bars"></i> 
-				<i class="fas fa-times"></i> 
-			</label>
-		<nav class="menu">
-			<ul>
-				<li><a href="index.html">Inicio</a></li>
-				<li><a href="catalogo.html">Catalogo</a></li>
-				<li><a href="ropa.html">Ropa</a></li>
-				<li><a href="zapatillas.html">Zapatillas</a></li>
-				<li><a href="accesorios.html">Accesorios</a></li>
-				<li><a href="carrito.html">Carrito de Compra</a></li>
-				<li><a href="pedido.html"> Pedido</a></li>
-				<li><a href="contacto.html"> Contacto</a></li>
-			</ul>
-		</nav>
 		<main>
 			<h2>Camisetas Manga Corta</h2>
 			<p></p>
@@ -38,8 +39,8 @@
 					Precio: 37,99 &euro;
 					Precio con Descuento (15%): <strong> 33,43 €</strong><br>
 					<span class="discount-tag">-12%</span><br>
-					<a href="carrito.html">
-						<button class="checkout-button" onclick="addToCart('individualFINAL WC Jersey', 33.43)">Añadir al Carrito</button>
+					<a>
+						<button class="checkout-button" onclick="addToCart('individualFINAL WC Jersey', 37.99, 33,43)">Añadir al Carrito</button>
 					</a>
 				</div>
 				<div id="camiseta2">
@@ -48,32 +49,32 @@
 					Precio: 39,99 &euro;
 					Precio con Descuento (12%): <strong> 35,19 €</strong><br>
 					<span class="discount-tag">-12%</span><br>
-					<a href="carrito.html">
-						<button class="checkout-button" onclick="addToCart('individual FINAL Jersey Puma', 39.99)">Añadir al Carrito</button>
+					<a>
+						<button class="checkout-button" onclick="addToCart('individual FINAL Jersey Puma', 39.99, 35.19)">Añadir al Carrito</button>
 					</a>
 				</div>
 				<div id="camiseta3">
 					<img src="img/HK5633_1_APPAREL_Photography_Front_View.png" alt="Camiseta Adidas"><br>
                     Adidas adizero Speed Tee<br>;
 					Precio: 28,00 &euro;<br>
-					<a href="carrito.html">
-						<button class="checkout-button" onclick="addToCart('Adidas adizero Speed Tee', 28.00)">Añadir al Carrito</button>
+					<a>
+						<button class="checkout-button" onclick="addToCart('Adidas adizero Speed Tee', 28.00, 28.00)">Añadir al Carrito</button>
 					</a>
 				</div>
 				<div id="camiseta4">
 					<img src="img/1-aee8c6fb.png" alt="Camiseta Nike"><br>
                     T-Shirt Dry Miler Running<br>
 					Precio: 40,25 &euro;<br>
-					<a href="carrito.html">
-						<button class="checkout-button" onclick="addToCart(' T-Shirt Dry Miler Running', 40.25)">Añadir al Carrito</button>
+					<a>
+						<button class="checkout-button" onclick="addToCart(' T-Shirt Dry Miler Running', 40.25, 40.25)">Añadir al Carrito</button>
 					</a>
 				</div>
 				<div id="camiseta5">
 					<img src="img/4-aee8c6fb.png" alt="Camiseta Asics"><br>
                     Camiseta asics ss top sulphur spring<br>
 					Precio: 25,00 &euro;<br>
-					<a href="carrito.html">
-						<button class="checkout-button" onclick="addToCart(' Camiseta asics ss top sulphur spring', 25.00)">Añadir al Carrito</button>
+					<a>
+						<button class="checkout-button" onclick="addToCart(' Camiseta asics ss top sulphur spring', 25.00, 25.00)">Añadir al Carrito</button>
 					</a>
 				</div>
 			</section>
@@ -84,10 +85,16 @@
 
 		<script>
 			function addToCart(productName, originalPrice, discountedPrice) {
-			let cart = JSON.parse(localStorage.getItem('cart')) || []; // Obtener el carrito del localStorage
-			cart.push({ name: productName, originalPrice: originalPrice, discountedPrice: discountedPrice }); // Añadir el producto con el precio con descuento al carrito
-			localStorage.setItem('cart', JSON.stringify(cart)); // Guardar el carrito actualizado en el localStorage
-			alert(productName + " ha sido añadido al carrito.");}
-		</script>
+			  let cart = JSON.parse(localStorage.getItem('cart')) || []; // Obtener el carrito del localStorage
+			  cart.push({
+				name: productName,
+				originalPrice: originalPrice,
+				discountedPrice: discountedPrice, // Guardar también el precio con descuento
+				quantity: 1 // Iniciar con una cantidad de 1
+			  });
+			  localStorage.setItem('cart', JSON.stringify(cart)); // Guardar el carrito actualizado en el localStorage
+			  alert(productName + " ha sido añadido al carrito.");
+			}
+		  </script>
 	</body>
 </html>

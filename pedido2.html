@@ -42,89 +42,47 @@
       </table>
       <button class="checkout-button" onclick="proceedToCheckout()">Ir al Pedido</button>
   </main>
-  <script>
-      function loadCart() {
-          let cart = JSON.parse(localStorage.getItem('cart')) || [];
-          let table = document.getElementById('cartTable');
-
-          // Iterar sobre los productos en el carrito y mostrarlos
-          cart.forEach(item => {
-              let row = table.insertRow();
-              let cell1 = row.insertCell(0);
-              let cell2 = row.insertCell(1);
-              let cell3 = row.insertCell(2);
-              let cell4 = row.insertCell(3);
-
-              cell1.textContent = item.name;
-              cell2.innerHTML = `<input type="number" value="1" min="1" onchange="updateTotal()">`; // Campo para cantidad
-              cell3.textContent = item.price + " €";
-              cell4.textContent = item.price + " €"; // Inicialmente, el total es igual al precio
-          });
-      }
-
-      function updateTotal() {
-          let cart = JSON.parse(localStorage.getItem('cart')) || [];
-          let total = 0;
-          let table = document.getElementById('cartTable');
-          let rows = table.rows;
-
-          // Recalcular el total basado en la cantidad
-          for (let i = 1; i < rows.length; i++) {
-              let price = parseFloat(rows[i].cells[2].textContent);
-              let quantity = rows[i].cells[1].children[0].value;
-              total += price * quantity;
-          }
-
-          alert('Total: ' + total + ' €');
-      }
-
-      function proceedToCheckout() {
-          if (localStorage.getItem('cart') && JSON.parse(localStorage.getItem('cart')).length > 0) {
-              window.location.href = "pedido.html"; // Redirige al pedido
-          } else {
-              alert("Tu carrito está vacío.");
-          }
-      }
-
-      // Cargar el carrito al cargar la página
-      window.onload = loadCart;
-  </script>
             <button><a href="carrito.html"></button>
-                <button class="checkout-button">Cambia tus Productos</button>
-        <aside>
-            <h3>Tus Datos</h3>
+            <button class="checkout-button">Cambia tus Productos</button>
+            <aside>
+            <<h2>Pedido</h2>
+			<h3>Tus Datos</h3>
+            <form id="pedidoForm"></form>
             <table border="i">
-                 <tr>
+                <tr>
                     <td>Nombre</td>
-                    <td><input type="text" name="nombre"></td>
+                    <td><input type="text" name="nombre" required></td>
                 </tr>
                 <tr>
                     <td>Apellidos</td>
-                    <td><input type="text" name="apellidos"></td>
+                    <td><input type="text" name="apellidos"required></td>
                 </tr>
                 <tr>
                     <td>email</td>
-                    <td><input type="text" name="email"></td>
+                    <td><input type="text" name="email"required></td>
                 </tr>
                 <tr>
                     <td>nº de telefono</td>
-                    <td><input type="text" name="nºTelefono"></td>
+                    <td><input type="text" name="nºTelefono"required></td>
                 </tr>
                 <tr>
                     <td>Direccion de Envio</td>
-                    <td><input type="text" name="dirección de envio"></td>
+                    <td><input type="text" name="dirección de envio"required></td>
                 </tr>
                 <tr>
                     <td>localidad</td>
-                    <td><input type="text" name="localidad" ></td>
+                    <td><input type="text" name="localidad" required></td>
                 </tr>
                 <tr>
                     <td>Codigo Postal</td>
-                    <td><input type="text" name="codigo postal" ></td>
+                    <td><input type="text" name="codigo postal" required></td>
                 </tr>
                 <tr>
                     <td>Provincia</td>
-                    <td><input type="text" name="probincia" ></td>
+                    <td><input type="text" name="probincia" required></td>
+                </tr>
+            </table>
+               
                 </tr>
                 <button><a href="pedido.html"></button>
                     <button class="checkout-button">Cambia tus Datos</button>
@@ -134,8 +92,70 @@
             <button class="checkout-button">Siguiente</button>
         </a>
         </main>
+        
+			
         <footer>
 			<p>&copy; @2024 [RUN&GO]. Todos los derechos reservados.</p>
 		</footer>
+        <script>
+            function saveFormData() {
+                let form = document.getElementById('pedidoForm');
+                let formData = {
+                    nombre: form['nombre'].value,
+                    apellidos: form['apellidos'].value,
+                    email: form['email'].value,
+                    telefono: form['nºTelefono'].value,
+                    direccion: form['dirección de envio'].value,
+                    localidad: form['localidad'].value,
+                    codigoPostal: form['codigo postal'].value,
+                    provincia: form['probincia'].value
+                };
+        
+                // Guardar los datos en el localStorage
+                localStorage.setItem('pedidoData', JSON.stringify(formData));
+            }
+        
+            function loadFormData() {
+                let formData = JSON.parse(localStorage.getItem('pedidoData'));
+                if (formData) {
+                    document.querySelector('[name="nombre"]').value = formData.nombre || '';
+                    document.querySelector('[name="apellidos"]').value = formData.apellidos || '';
+                    document.querySelector('[name="email"]').value = formData.email || '';
+                    document.querySelector('[name="nºTelefono"]').value = formData.telefono || '';
+                    document.querySelector('[name="dirección de envio"]').value = formData.direccion || '';
+                    document.querySelector('[name="localidad"]').value = formData.localidad || '';
+                    document.querySelector('[name="codigo postal"]').value = formData.codigoPostal || '';
+                    document.querySelector('[name="probincia"]').value = formData.provincia || '';
+                }
+            }
+        
+            function validateForm() {
+                // Obtener todos los campos del formulario
+                let form = document.getElementById("pedidoForm");
+                let inputs = form.getElementsByTagName("input");
+                let valid = true;
+                
+                // Verificar si algún campo está vacío
+                for (let i = 0; i < inputs.length; i++) {
+                    if (inputs[i].value.trim() === "") {
+                        valid = false;
+                        alert("Por favor, completa todos los campos antes de continuar.");
+                        break;
+                    }
+                }
+        
+                // Si todos los campos están completos, guardar los datos y redirigir
+                if (valid) {
+                    saveFormData();  // Guardar los datos antes de ir al siguiente paso
+                    window.location.href = "pedido2.html"; // Redirigir a la siguiente página
+                }
+            }
+        
+            window.onload = function() {
+                loadCart();  // Cargar los productos al cargar la página
+                loadFormData();  // Cargar los datos del pedido
+            };
+        </script>
+        
 	</body>
 </html>

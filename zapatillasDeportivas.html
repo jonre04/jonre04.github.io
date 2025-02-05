@@ -37,7 +37,7 @@
                     FuelCell SC Elite v4<br>
 					Precio: 260,00 &euro;<br>
 					<a>
-						<button class="checkout-button">Añadir al Carrito</button>
+						<button class="checkout-button" onclick="addToCart('FuelCell SC Elite v4', 260.00, 260.00)">Añadir al Carrito</button>
 					</a>
 				</div>
 				<div id="zapatilaDeportiva2">
@@ -45,21 +45,21 @@
 					Zapatilla Adizero Prime X 2.0 STRUNG<br>
 					Precio: 240,00 &euro;<br>
 					<a>
-						<button class="checkout-button" onclick="addToCart('Zapatilla Adizero Prime X 2.0 STRUNG', 240.00)">Añadir al Carrito</button>
+						<button class="checkout-button" onclick="addToCart('Zapatilla Adizero Prime X 2.0 STRUNG', 240.00, 240.00)">Añadir al Carrito</button>
 					</a>
 				</div>
 				<div id="zapatillaDeportiva3">
 					<img src="img/NIK23429_1000_1__23430.png" alt="Zapatillas Nike"><br>
                     Nike ZoomX Invincible Run Flyknit 3 zapatillas running - HO24<br>;
 					Precio: 189,99 &euro;<br>
-						<button class="checkout-button" onclick="addToCart('Nike ZoomX Invincible Run Flyknit 3 zapatillas running - HO24', 189.99)">Añadir al Carrito</button>
+						<button class="checkout-button" onclick="addToCart('Nike ZoomX Invincible Run Flyknit 3 zapatillas running - HO24', 189.99, 189.99)">Añadir al Carrito</button>
 					</a>
 				</div>
 				<div id="zapatillaDeportiva4">
 					<img src="img/1013A124_401_SR_RT_GLB.png" alt="Zapatillas Asics"><br>
                     METASPEED EDGE PARIS<br>
 					Precio: 249,99 &euro;<br>
-						<button class="checkout-button" onclick="addToCart('METASPEED EDGE PARIS', 249.99)">Añadir al Carrito</button>
+						<button class="checkout-button" onclick="addToCart('METASPEED EDGE PARIS', 249.99, 249.99)">Añadir al Carrito</button>
 					</a>
 				</div>
 			</section>
@@ -70,10 +70,16 @@
 
 		<script>
 			function addToCart(productName, originalPrice, discountedPrice) {
-			let cart = JSON.parse(localStorage.getItem('cart')) || []; // Obtener el carrito del localStorage
-			cart.push({ name: productName, originalPrice: originalPrice, discountedPrice: discountedPrice }); // Añadir el producto con el precio con descuento al carrito
-			localStorage.setItem('cart', JSON.stringify(cart)); // Guardar el carrito actualizado en el localStorage
-			alert(productName + " ha sido añadido al carrito.");}
-		</script>
+			  let cart = JSON.parse(localStorage.getItem('cart')) || []; // Obtener el carrito del localStorage
+			  cart.push({
+				name: productName,
+				originalPrice: originalPrice,
+				discountedPrice: discountedPrice, // Guardar también el precio con descuento
+				quantity: 1 // Iniciar con una cantidad de 1
+			  });
+			  localStorage.setItem('cart', JSON.stringify(cart)); // Guardar el carrito actualizado en el localStorage
+			  alert(productName + " ha sido añadido al carrito.");
+			}
+		  </script>
 	</body>
 </html>/

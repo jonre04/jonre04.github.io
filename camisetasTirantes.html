@@ -11,11 +11,10 @@
 			<h1>RUN & GO</h1>
 		</header>
 		<div class="respmenu">
-			<input type="checkbox" id="menu-toggle">
-			<label for="menu-toggle" class="menu-icon">
-				<i class="fas fa-bars"></i> 
-				<i class="fas fa-times"></i> 
-			</label>
+        <input type="checkbox" id="menu-toggle">
+        <label for="menu-toggle" class="menu-icon">
+            <i class="fas fa-bars"></i> <!-- Ícono de hamburguesa -->
+        </label>
 		<nav class="menu">
 			<ul>
 				<li><a href="index.html">Inicio</a></li>
@@ -37,40 +36,40 @@
 					Precio: 55,00 &euro;<br>
 					Precio con Descuento (12%): <strong> 48,40 €</strong><br>
 					<span class="discount-tag">-12%</span><br>
-					<a href="carrito.html">
-						<button class="checkout-button" onclick="addToCart(' RUN ULTRASPUN', 55.00)">Añadir al Carrito</button>
+					<a>
+						<button class="checkout-button" onclick="addToCart(' RUN ULTRASPUN', 55.00, 48.49)">Añadir al Carrito</button>
 					</a>
 				</div>
 				<div id="camisetaTirantes2">
 					<img src="img/camiseta-tirantes-de-running-adidas-adizero-running-singlet-hombre-azul.png" alt="Camiseta Adidas"><br>
 					Running adidas Adizero Running Singlet Hombre Azul<br>
 					 Precio: 54,00 &euro;<br>
-					 <a href="carrito.html">
-						<button class="checkout-button" onclick="addToCart('Running adidas Adizero Running Singlet Hombre Azul', 54.00)">Añadir al Carrito</button>
+					 <a>
+						<button class="checkout-button" onclick="addToCart('Running adidas Adizero Running Singlet Hombre Azul', 54.00, 54.00)">Añadir al Carrito</button>
 					</a>
 				</div>
 				<div id="camisetaTirantes3">
 					<img src="img/121600-0496_b1_.png" alt="Camiseta Asics"><br>
                 	ASICS SINGLET<br>
 					Precio: 49,50 &euro;<br>
-					<a href="carrito.html">
-						<button class="checkout-button" onclick="addToCart(' ASICS SINGLET', 49.50)">Añadir al Carrito</button>
+					<a>
+						<button class="checkout-button" onclick="addToCart(' ASICS SINGLET', 49.50, 49.50)">Añadir al Carrito</button>
 					</a>
 				</div>
 				<div id="camisetaTirantes4">
 					<img src="img/102754.067_1.png" alt="Camiseta Joma"><br>
 					JOMA ELITE IX TANK<br>
 					Precio: 26,00 &euro;<br>
-					<a href="carrito.html">
-						<button class="checkout-button" onclick="addToCart(' JOMA ELITE IX TANK', 26.00)">Añadir al Carrito</button>
+					<a>
+						<button class="checkout-button" onclick="addToCart(' JOMA ELITE IX TANK', 26.00, 26.00)">Añadir al Carrito</button>
 					</a>		
 				</div>
 				<div id="camisetaTirantes5">
 					<img src="img/892851-010-phsfh001-1000.png" alt="Camiseta Nike"><br>
 					RUNNING NIKE AEROSWIFT<br>
 					Precio: 54,00 &euro;<br>
-					<a href="carrito.html">
-						<button class="checkout-button" onclick="addToCart(' RUNNING NIKE AEROSWIFT', 54.00)">Añadir al Carrito</button>
+					<a>
+						<button class="checkout-button" onclick="addToCart(' RUNNING NIKE AEROSWIFT', 54.00, 54.00)">Añadir al Carrito</button>
 					</a>
 				</div>
 			</Section>
@@ -80,10 +79,16 @@
 		</footer>
 		<script>
 			function addToCart(productName, originalPrice, discountedPrice) {
-			let cart = JSON.parse(localStorage.getItem('cart')) || []; // Obtener el carrito del localStorage
-			cart.push({ name: productName, originalPrice: originalPrice, discountedPrice: discountedPrice }); // Añadir el producto con el precio con descuento al carrito
-			localStorage.setItem('cart', JSON.stringify(cart)); // Guardar el carrito actualizado en el localStorage
-			alert(productName + " ha sido añadido al carrito.");}
-		</script>
+			  let cart = JSON.parse(localStorage.getItem('cart')) || []; // Obtener el carrito del localStorage
+			  cart.push({
+				name: productName,
+				originalPrice: originalPrice,
+				discountedPrice: discountedPrice, // Guardar también el precio con descuento
+				quantity: 1 // Iniciar con una cantidad de 1
+			  });
+			  localStorage.setItem('cart', JSON.stringify(cart)); // Guardar el carrito actualizado en el localStorage
+			  alert(productName + " ha sido añadido al carrito.");
+			}
+		  </script>
 	</body>
 </html>
