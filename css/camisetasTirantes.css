@@ -81,6 +81,17 @@
 			top: 10px;             
 			left: 10px;
 		}
+		.new-tag {
+			background-color: blue; 
+			position: absolute;   
+			color: white;          
+			padding: 5px 10px;     
+			font-weight: bold;    
+			border-radius: 5px;   
+			font-size: 1.2em;      
+			top: 10px;             
+			left: 10px;
+		}
 		main section div{
 			border: 1px dotted black;
 		}

@@ -1,45 +1,59 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 	<head>
-		<title>LLave para Clavos</title>
-		<meta name="viewport" content="width=device-width, initial scale=1.0">
-		<link rel="stylesheet" href="css/relojGarmin.css">
+		<title>Garmin Reloj Forerunner 265</title>
 	</head>
+	<link rel="stylesheet" href="css/relojGarmin.css">
 	<body>
 		<header>
 			<img src="img/logoa.png" alt="logoa">
-			<h1>RUN & GO</h1>
+			<h1>Denda</h1>
 		</header>
-		<div class="respmenu">
-			<input type="checkbox" id="menu-toggle">
-			<label for="menu-toggle" class="menu-icon">
-				<i class="fas fa-bars"></i> 
-				<i class="fas fa-times"></i> 
-			</label>
-		<nav class="menu">
+		<nav>
 			<ul>
-				<li><a href="index.html">Inicio</a></li>
-				<li><a href="catalogo.html">Catalogo</a></li>
-				<li><a href="ropa.html">Ropa</a></li>
-				<li><a href="zapatillas.html">Zapatillas</a></li>
-				<li><a href="accesorios.html">Accesorios</a></li>
-				<li><a href="carrito.html">Carrito de Compra</a></li>
-				<li><a href="pedido.html"> Pedido</a></li>
-				<li><a href="contacto.html"> Contacto</a></li>
-    		</ul>
+				<li><a href="index.html">Hasiera</a></li>
+				<li><a href="katalogoa.html">Katalogoa</a></li>
+				<li><a href="nobedadeak.html">Nobedadeak</a></li>
+				<li><a href="eskaintzak.html">Eskaintzak</a></li>
+				<li><a href="kontaktua.html">Kontaktua</a></li>
+			</ul>
 		</nav>
+		<h2>Garmin Reloj Forerunner 265</h2>
 		<main>
-			<img src="img/garmin-reloj-forerunner-265.png" alt="Reloj Garmin"><br>
+			<p>Bisel negro con carcasa en blanco y correa de silicona en blanco/azul</p>
+			Garmin Reloj Forerunner 265<br>
+			<del>Precio: 395,99 &euro;</del><br>
+			Precio con Descuento (15%): <strong> 336,59 €</strong><br>
+			<a>
+				<button class="checkout-button" onclick="addToCart('Garmin Reloj Forerunner 265', 395.99, 336.59)">Añadir al Carrito</button>
+			</a>
 		</main>
 		<aside>
-            Garmin Reloj Forerunner 265<br>
-            <del>Precio: 395,99 &euro;</del><br>
-            Precio con Descuento (15%): <strong> 336,59 €</strong><br>
-            <a>
-                <button class="checkout-button" onclick="addToCart('Garmin Reloj Forerunner 265', 395.99, 336.59)">Añadir al Carrito</button>
-            </a>
-		<footer>
-			<p>&copy; 2024 Lea Artibai Ikastetxea</p>
+				<div id="reloj3">
+					<img src="img/garmin-reloj-forerunner-265.png" alt="Reloj Garmin"><br>
+					<span class="discount-tag">-15%</span><br>
+				  </div>
+		</aside>
+		
+		
+		<footer class="footer">
+			<div class="container">        
+				<p>&copy; @2024 [RUN&GO]. Todos los derechos reservados.</p>
+				<p><a href="protecciónDatos.html">Política de Privacidad y Protección de datos</a></p>
+			</div>
 		</footer>
+		<script>
+			function addToCart(productName, originalPrice, discountedPrice) {
+			  let cart = JSON.parse(localStorage.getItem('cart')) || []; // Obtener el carrito del localStorage
+			  cart.push({
+				name: productName,
+				originalPrice: originalPrice,
+				discountedPrice: discountedPrice, // Guardar también el precio con descuento
+				quantity: 1 // Iniciar con una cantidad de 1
+			  });
+			  localStorage.setItem('cart', JSON.stringify(cart)); // Guardar el carrito actualizado en el localStorage
+			  alert(productName + " ha sido añadido al carrito.");
+			}
+		</script>
 	</body>
 </html>

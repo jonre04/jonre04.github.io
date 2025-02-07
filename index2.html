@@ -3,101 +3,97 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Index2</title>
-    <link rel="stylesheet" href="css/index3.css">
+    <title>index2</title>
+    <link rel="stylesheet" href="css/index2.css">
   </head>
   <body>
-    <!-- Header -->
     <div class="header">
       <img src="img/logoa.png" alt="logoa">
-      <h1>Run & Go</h1>
+      <h1>RUN & GO</h1>
     </div>
-
-    <!-- Main content (using grid layout) -->
-    <div class="row" style="display: grid; grid-template-columns: repeat(12, 1fr); gap: 10px;">
-      
-      <!-- Sidebar (Menu) -->
-      <div class="col-3 col-s-3 menu">
-        <ul>
-          <li><a href="index.html">Inicio</a></li>
-          <li><a href="catalogo.html">Catalogo</a></li>
-          <li><a href="ropa.html">Ropa</a></li>
-          <li><a href="zapatillas.html">Zapatillas</a></li>
-          <li><a href="accesorios.html">Accesorios</a></li>
-          <li><a href="carrito.html">Carrito de Compra</a></li>
-          <li><a href="pedido.html">Pedido</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-      </div>
-
-      <!-- Main content (Product display) -->
-      <div class="col-6 col-s-6" style="grid-column: 3 / span 6;">
-        <h1>RUN & GO</h1>
-        <h2>Ofertas</h2>
-        <section>
-          <div class="productos-grid">
-            <div class="producto-item">
-              <img src="img/1-aee8c6fb.png" alt="Camiseta Nike"><br>
-              T-Shirt Dry Miler Running<br>
-              Precio: 40,25 &euro;<br>
-              <a href="camisetasCortas.html"></a>
-              <span class="discount-tag">-15%</span><br>
+    <main>
+        <div class="container">
+            <div class="row">
+                <div class="col-1 col-s-3 menu" id="tabla1">
+                    <ul>
+                        <li><a href="index2.html" style="color: white; text-decoration: none;">Index</a></li>
+                        <li><a href="catalogo.html" style="color: white; text-decoration: none;">Catalogo</a></li>
+                        <li><a href="ropa.html" style="color: white; text-decoration: none;">Ropa</a></li>
+                        <li><a href="zapatillas.html" style="color: white; text-decoration: none;">Zapatillas</a></li>
+                        <li><a href="accesorios.html" style="color: white; text-decoration: none;">Accesorios</a></li>
+                        <li><a href="carrito.html" style="color: white; text-decoration: none;">Carrito de Compra</a></li>
+                        <li><a href="pedido.html" style="color: white; text-decoration: none;">Pedido</a></li>
+                        <li><a href="contacto.html" style="color: white; text-decoration: none;">Contacto</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-6 col-s-9" id="tabla2">
+                    <h1>Novedades</h1>
+                    <div class="productos-grid">
+                        <div class="producto-item">
+                          <img src="img/braga-de-cuello-buff-polar-prints.png" alt=""><br>
+                          BRAGA DE CUELLO BUFF POLAR PRINTS<br>
+                          Precio: 29,95 &euro;<br>
+                         <span class="new-tag">Nuevo</span><br>
+                          <a href="bragasCuello.html"></a>
+                        </div>
+                        <div class="producto-item">
+                          <img src="img/121600-0496_b1_.png" alt="Camiseta Asics"><br>
+                          ASICS SINGLET<br>
+                          Precio: 49,50 &euro;<br>
+                          <span class="new-tag">Nuevo</span><br>
+                          <a href="camisetasTirantes.html"></a>
+                        </div>
+                        <div class="producto-item">
+                          <img src="img/71+gi3Ua-KL._AC_SX522_.png" alt="Reloj SUUNTO Race S"><br>
+                          SUUNTO Race S Reloj Correr<br>
+                          Precio: 349,99 &euro;</del><br>
+                          <span class="new-tag">Nuevo</span><br>
+                          <a href="relojes.html"></a>
+                        </div>
+                      </div>
+                    <h1>Ofertas</h1>
+                    <div class="productos-grid">
+                        <div class="producto-item">
+                          <img src="img/1-aee8c6fb.png" alt="Camiseta Nike"><br>
+                          T-Shirt Dry Miler Running<br>
+                          <del>Precio: 40,25 &euro;<br></del>
+                          Precio con Descuento (10%): <strong> 36,22 €</strong><br>
+                          <span class="discount-tag">-10%</span><br>
+                          <a href="camisetasCortas.html"></a>
+                          
+                        </div>
+                        <div class="producto-item">
+                          <img src="img/garmin-reloj-forerunner-265.png" alt="Reloj Garmin"><br>
+                          Garmin Reloj Forerunner 265<br>
+                          Precio: 395,99 &euro;<br>
+                          Precio con Descuento (15%): <strong> 336,59 €</strong><br>
+                          <span class="discount-tag">-15%</span><br>
+                          <a href="relojes.html"></a>
+                        </div>
+                        <div class="producto-item">
+                          <img src="img/1673365857-41HKbv4BqkL._SL500_.png" alt="Reloj Polar Pacer"><br>
+                          Polar Pacer Reloj De Running, S/L, Negro<br>
+                          Precio: 349,90 &euro;<br>
+                          Precio con Descuento (15%): <strong> 297,42 €</strong><br>
+                          <span class="discount-tag">-15%</span><br>
+                          <a href="relojes.html"></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-9 col-s-12">
+                    <div class="aside">
+                      <img src="img/clipart-people-running-fast-speed-__motion-run.png" alt="imagen">
+                    </div>
+                </div>
             </div>
-            <div class="producto-item">
-              <img src="img/garmin-reloj-forerunner-265.png" alt="Reloj Garmin"><br>
-              Garmin Reloj Forerunner 265<br>
-              Precio: 395,99 &euro;<br>
-              <a href="relojes.html"></a>
-              <span class="discount-tag">-15%</span><br>
-            </div>
-            <div class="producto-item">
-              <img src="img/1673365857-41HKbv4BqkL._SL500_.png" alt="Reloj Polar Pacer"><br>
-              Polar Pacer Reloj De Running, S/L, Negro<br>
-              Precio: 349,90 &euro;<br>
-              <a href="relojes.html"></a>
-              <span class="discount-tag">-15%</span><br>
-            </div>
-          </div>
-        </section>
-        <h2> Novedades</h2>
-        <section>
-          <div class="productos-grid">
-            <div class="producto-item">
-              <img src="img/braga-de-cuello-buff-polar-prints.png" alt=""><br>
-              BRAGA DE CUELLO BUFF POLAR PRINTS<br>
-              Precio: 29,95 &euro;<br>
-              <a href="bragasCuello.html"></a>
-              <span class="new-tag">Nuevo</span><br>
-            </div>
-            <div class="producto-item">
-              <img src="img/121600-0496_b1_.png" alt="Camiseta Asics"><br>
-              ASICS SINGLET<br>
-              Precio: 49,50 &euro;<br>
-              <a href="camisetasTirantes.html"></a>
-              <span class="new-tag">Nuevo</span><br>
-            </div>
-            <div class="producto-item">
-              <img src="img/71+gi3Ua-KL._AC_SX522_.png" alt="Reloj SUUNTO Race S"><br>
-              SUUNTO Race S Reloj Correr<br>
-              <del>Precio: 349,99 &euro;</del><br>
-              <a href="relojes.html"></a>
-              <span class="new-tag">Nuevo</span><br>
-            </div>
-          </div>
-        </section>
-      </div>
-
-      <!-- Sidebar (Aside) -->
-      <div class="col-3 col-s-12" style="grid-column: 9 / span 4;">
-        <div class="aside">
-          <img src="img/clipart-people-running-fast-speed-__motion-run.png" alt="imagen">
         </div>
-      </div>
-    </div>
-
-    <!-- Footer -->
-    <div class="footer">
-      <p>&copy; 2024 RUN&GO</p>
-    </div>
-  </body>
+    </main>
+    <footer class="footer">
+        <div class="container">        
+            <p>&copy; @2024 [RUN&GO]. Todos los derechos reservados.</p>
+            <p><a href="protecciónDatos.html">Política de Privacidad y Protección de datos</a></p>
+        </div>
+    </footer>
+</body>
 </html>
