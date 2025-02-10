@@ -1,11 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
   <head>
     <title>Carrito de Compra</title>
     <link rel="stylesheet" href="css/carrito.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Incluir FontAwesome para los íconos -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
   </head>
   <body>
     <header>
@@ -15,8 +13,8 @@
     <div class="respmenu">
       <input type="checkbox" id="menu-toggle">
       <label for="menu-toggle" class="menu-icon">
-        <i class="fas fa-bars"></i> 
-        <i class="fas fa-times"></i> 
+        <i class="fas fa-bars"></i>
+        <i class="fas fa-times"></i>
       </label>
     </div>
     <nav class="menu">
@@ -28,121 +26,117 @@
         <li><a href="accesorios.html">Accesorios</a></li>
         <li><a href="carrito.html">Carrito de Compra</a></li>
         <li><a href="pedido.html">Pedido</a></li>
-        <li><a href="contacto.html"> Contacto</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
       </ul>
     </nav>
-    
+
     <main>
       <h2>Carrito de Compra</h2>
       <table id="cartTable">
-          <thead>
-              <tr>
-                  <th>Producto</th>
-                  <th>Cantidad</th>
-                  <th>Precio</th>
-                  <th>Total por Producto</th>
-                  <th>Eliminar</th>
-              </tr>
-          </thead>
-          <tbody>
-              <!-- Los productos se agregarán aquí dinámicamente -->
-          </tbody>
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>Total por Producto</th>
+            <th>Eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Los productos se agregarán aquí dinámicamente -->
+        </tbody>
       </table>
       <div id="totalSection">
-          <p id="totalAmount">Total: 0 €</p>
+        <p id="totalAmount">Total: 0 €</p>
       </div>
-      <button class="checkout-button" onclick="proceedToCheckout()">Ir al Pedido</button>
-  </main>
+      <button type="button" class="checkout-button" onclick="proceedToCheckout()">Ir al pedido</button>
+    </main>
 
-  <footer class="footer">
-    <div class="container">        
-        <p>&copy; @2024 [RUN&GO]. Todos los derechos reservados.</p>
-        <p><a href="protecciónDatos.html">Política de Privacidad y Protección de datos</a></p>
-    </div>
-</footer>
+    <footer>
+      <p>&copy; 2024 [RUN&GO]. Todos los derechos reservados.</p>
+    </footer>
 
-  <script>
+    <script>
+      // Función para cargar el carrito desde localStorage
       function loadCart() {
-          let cart = JSON.parse(localStorage.getItem('cart')) || [];
-          let tableBody = document.querySelector('#cartTable tbody');
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let tableBody = document.querySelector('#cartTable tbody');
 
-          tableBody.innerHTML = '';
+        // Limpiar el contenido actual del cuerpo de la tabla
+        tableBody.innerHTML = '';
 
-          if (cart.length === 0) {
-              tableBody.innerHTML = '<tr><td colspan="5">Tu carrito está vacío.</td></tr>';
-              document.getElementById('totalAmount').textContent = "Total: 0 €"; // Actualizar el total
-              return;
-          }
+        // Si el carrito está vacío
+        if (cart.length === 0) {
+          tableBody.innerHTML = '<tr><td colspan="5">Tu carrito está vacío.</td></tr>';
+          return;
+        }
 
-          cart.forEach((item, index) => {
-              let row = tableBody.insertRow();
-              let cell1 = row.insertCell(0);
-              let cell2 = row.insertCell(1);
-              let cell3 = row.insertCell(2);
-              let cell4 = row.insertCell(3);
-              let cell5 = row.insertCell(4);
+        // Mostrar productos del carrito
+        cart.forEach((item, index) => {
+          let row = tableBody.insertRow();
+          let cell1 = row.insertCell(0);
+          let cell2 = row.insertCell(1);
+          let cell3 = row.insertCell(2);
+          let cell4 = row.insertCell(3);
+          let cell5 = row.insertCell(4);
 
-              let itemPrice = parseFloat(item.discountedPrice) || 0;
-              let itemQuantity = item.quantity || 1;
+          // Mostrar nombre, cantidad, y precios
+          let itemPrice = item.discountedPrice || item.originalPrice;
+          let itemQuantity = item.quantity || 1;
 
-              cell1.textContent = item.name;
-              cell2.innerHTML = `<input type="number" value="${itemQuantity}" min="1" onchange="updateTotal()">`;
-              cell3.textContent = itemPrice + " €";
-              
-              let rowTotal = itemPrice * itemQuantity;
-              cell4.textContent = rowTotal.toFixed(2) + " €";
+          cell1.textContent = item.name;
+          cell2.innerHTML = `<input type="number" value="${itemQuantity}" min="1" onchange="updateTotal()">`;
+          cell3.innerHTML = `${itemPrice.toFixed(2)} €`;
 
-              cell5.innerHTML = `<button class="delete-button" onclick="removeItem(${index})"><i class="fas fa-trash-alt"></i></button>`;
-          });
+          let rowTotal = itemPrice * itemQuantity;
+          cell4.innerHTML = `${rowTotal.toFixed(2)} €`;
 
-          updateTotal(); // Actualizar el total al cargar el carrito
+          // Botón de eliminar
+          cell5.innerHTML = `<button class="delete-button" onclick="removeItem(${index})">Eliminar</button>`;
+        });
+
+        updateTotal(); // Actualizar total después de cargar el carrito
       }
 
+      // Actualizar el total del carrito
       function updateTotal() {
-          let cart = JSON.parse(localStorage.getItem('cart')) || [];
-          let total = 0;
-          let table = document.getElementById('cartTable');
-          let rows = table.rows;
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let total = 0;
+        let table = document.getElementById('cartTable');
+        let rows = table.rows;
 
-          for (let i = 1; i < rows.length; i++) {
-              let priceText = rows[i].cells[2].textContent;
-              let price = parseFloat(priceText.replace(" €", "").trim());
-              let quantity = parseInt(rows[i].cells[1].children[0].value, 10);
+        for (let i = 1; i < rows.length; i++) {
+          let price = parseFloat(rows[i].cells[3].textContent.replace(' €', ''));
+          total += price;
+        }
 
-              if (isNaN(price) || isNaN(quantity)) {
-                  console.error("Valor inválido en precio o cantidad: ", price, quantity);
-                  continue;
-              }
-
-              let rowTotal = price * quantity;
-              rows[i].cells[3].textContent = rowTotal.toFixed(2) + " €";
-              total += rowTotal;
-          }
-
-          document.getElementById('totalAmount').textContent = "Total: " + total.toFixed(2) + " €";
+        document.getElementById('totalAmount').textContent = `Total: ${total.toFixed(2)} €`;
       }
 
-      function proceedToCheckout() {
-          if (localStorage.getItem('cart') && JSON.parse(localStorage.getItem('cart')).length > 0) {
-              window.location.href = "pedido.html";
-          } else {
-              alert("Tu carrito está vacío.");
-          }
-      }
-
+      // Eliminar un producto del carrito
       function removeItem(index) {
-          let cart = JSON.parse(localStorage.getItem('cart')) || [];
-          cart.splice(index, 1);  // Eliminar el artículo de la posición indicada
-          localStorage.setItem('cart', JSON.stringify(cart));  // Actualizar el carrito en el localStorage
-          loadCart();  // Recargar el carrito y actualizar el total
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        cart.splice(index, 1);
+        localStorage.setItem('cart', JSON.stringify(cart));
+        loadCart(); // Recargar el carrito después de eliminar
       }
 
+      // Redirigir al pedido
+      function proceedToCheckout() {
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // Verificar si el carrito está vacío
+        if (cart.length === 0) {
+          alert("Tu carrito está vacío. Por favor, agrega productos antes de proceder.");
+        } else {
+          window.location.href = "pedido.html"; // Redirigir a la página de pedido
+        }
+      }
+
+      // Ejecutar la carga del carrito cuando se carga la página
       window.onload = loadCart;
-  </script>
-</body>
+    </script>
+  </body>
 </html>
 
 
-
-
-        

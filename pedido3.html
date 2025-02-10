@@ -4,21 +4,6 @@
 		<title>Pedido3</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="css/pedido3.css">
-		<script>
-			// Función que cambia la acción del formulario según el método de pago seleccionado
-			function cambiarAccionFormulario() {
-				var metodoPago = document.querySelector('input[name="metodo_pago"]:checked').value;
-				var formulario = document.querySelector('form');
-
-				if (metodoPago === 'paypal') {
-					// Si el usuario elige PayPal, redirigir a pedido4.html
-					formulario.action = "pedido4.html";
-				} else if (metodoPago === 'tarjeta') {
-					// Si el usuario elige tarjeta de crédito, redirigir a pedido5.html
-					formulario.action = "pedido5.html";
-				}
-			}
-		</script>
 	</head>
 	<body>
 		<header>
@@ -40,14 +25,14 @@
 					<li><a href="accesorios.html">Accesorios</a></li>
 					<li><a href="carrito.html">Carrito de Compra</a></li>
 					<li><a href="pedido.html">Pedido</a></li>
-					<li><a href="contacto.html"> Contacto</a></li>
+					<li><a href="contacto.html">Contacto</a></li>
 				</ul>
 			</nav>
 		</div>
 		<main>
 			<h2>Pedido</h2>
 			<h3>Carrito de Compra</h3>
-			<form action="procesar_pedido.html" method="post" onsubmit="cambiarAccionFormulario()">
+			<form action="pedido4.html" method="post">
 				<table>
 					<tr>
 						<td>
@@ -64,14 +49,12 @@
 						</td>
 					</tr>
 				</table>
-				<button type="submit" class="checkout-button">Realizar Pedido</button>
+				<!-- Ahora el botón solo redirige a pedido4.html al hacer clic -->
+				<button type="submit" class="checkout-button">Siguiente</button>
 			</form>
 		</main>
-		<footer class="footer">
-			<div class="container">        
-				<p>&copy; @2024 [RUN&GO]. Todos los derechos reservados.</p>
-				<p><a href="protecciónDatos.html">Política de Privacidad y Protección de datos</a></p>
-			</div>
+		<footer>
+			<p>&copy; @2024 [RUN&GO]. Todos los derechos reservados.</p>
 		</footer>
 	</body>
 </html>

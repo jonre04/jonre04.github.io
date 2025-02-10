@@ -1,121 +1,82 @@
 <!doctype html>
 <html>
-	<head>
-		<title>Pedido</title>
-		<meta name="viewport" content="width=device-width, initial scale=1.0">
-		<link rel="stylesheet" href="css/pedido.css">
-	</head>
-	<body>
-		<header>
-			<img src="img/logoa.png" alt="logoa">
-			<h1>RUN & GO</h1>
-		</header>
-		<div class="respmenu">
-			<input type="checkbox" id="menu-toggle">
-			<label for="menu-toggle" class="menu-icon">
-				<i class="fas fa-bars"></i> 
-				<i class="fas fa-times"></i> 
-			</label>
-		<nav class="menu">
-			<ul>
-				<li><a href="index.html">Inicio</a></li>
-				<li><a href="catalogo.html">Catalogo</a></li>
-				<li><a href="ropa.html">Ropa</a></li>
-				<li><a href="zapatillas.html">Zapatillas</a></li>
-				<li><a href="accesorios.html">Accesorios</a></li>
-				<li><a href="carrito.html">Carrito de Compra</a></li>
-                <li><a href="pedido.html"> Pedido</a></li>
-                <li><a href="contacto.html"> Contacto</a></li>
-			</ul>
-		</nav>
-		</div>
-        <main>
-			<h2>Pedido</h2>
-			<h3>Tus Datos</h3>
-            <form id="pedidoForm"></form>
-            <table border="i">
-                <tr>
-                    <td>Nombre</td>
-                    <td><input type="text" name="nombre" required></td>
-                </tr>
-                <tr>
-                    <td>Apellidos</td>
-                    <td><input type="text" name="apellidos"required></td>
-                </tr>
-                <tr>
-                    <td>email</td>
-                    <td><input type="text" name="email"required></td>
-                </tr>
-                <tr>
-                    <td>nº de telefono</td>
-                    <td><input type="text" name="nºTelefono"required></td>
-                </tr>
-                <tr>
-                    <td>Direccion de Envio</td>
-                    <td><input type="text" name="dirección de envio"required></td>
-                </tr>
-                <tr>
-                    <td>localidad</td>
-                    <td><input type="text" name="localidad" required></td>
-                </tr>
-                <tr>
-                    <td>Codigo Postal</td>
-                    <td><input type="text" name="codigo postal" required></td>
-                </tr>
-                <tr>
-                    <td>Provincia</td>
-                    <td><input type="text" name="probincia" required></td>
-                </tr>
-            </table>
-				<a href="pedido2.html">
-					<button type="button" class="checkout-button" onclick="validateForm()">Siguiente</button>
-				</a>
-        </main>
-        <footer class="footer">
-            <div class="container">        
-                <p>&copy; @2024 [RUN&GO]. Todos los derechos reservados.</p>
-                <p><a href="protecciónDatos.html">Política de Privacidad y Protección de datos</a></p>
-            </div>
-        </footer>
+  <head>
+    <title>Pedido</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/pedido.css">
+  </head>
+  <body>
+    <header>
+      <img src="img/logoa.png" alt="logoa">
+      <h1>RUN & GO</h1>
+    </header>
 
-        <script>
-		function saveFormData() {
-    	let form = document.getElementById('pedidoForm');
-		let formData = {
-        nombre: form['nombre'].value,
-        apellidos: form['apellidos'].value,
-        email: form['email'].value,
-        telefono: form['nºTelefono'].value,
-        direccion: form['dirección de envio'].value,
-        localidad: form['localidad'].value,
-        codigoPostal: form['codigo postal'].value,
-        provincia: form['probincia'].value
-    	};
+    <main>
+      <h2>Pedido</h2>
+      <h3>Tus Datos</h3>
+      <form id="pedidoForm">
+        <table>
+          <tr>
+            <td>Nombre</td>
+            <td><input type="text" name="nombre" id="nombre" required></td>
+          </tr>
+          <tr>
+            <td>Apellidos</td>
+            <td><input type="text" name="apellidos" id="apellidos" required></td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td><input type="email" name="email" id="email" required></td>
+          </tr>
+          <tr>
+            <td>Teléfono</td>
+            <td><input type="text" name="telefono" id="telefono" required></td>
+          </tr>
+          <tr>
+            <td>Dirección de Envío</td>
+            <td><input type="text" name="direccion" id="direccion" required></td>
+          </tr>
+          <tr>
+            <td>Localidad</td>
+            <td><input type="text" name="localidad" id="localidad" required></td>
+          </tr>
+          <tr>
+            <td>Código Postal</td>
+            <td><input type="text" name="codigo_postal" id="codigo_postal" required></td>
+          </tr>
+          <tr>
+            <td>Provincia</td>
+            <td><input type="text" name="provincia" id="provincia" required></td>
+          </tr>
+        </table>
+        <button type="button" class="checkout-button" onclick="saveUserData()">Siguiente</button>
+      </form>
+    </main>
 
-    	localStorage.setItem('pedidoData', JSON.stringify(formData));
-		}
+    <footer>
+      <p>&copy; @2024 [RUN&GO]. Todos los derechos reservados.</p>
+    </footer>
 
-		function loadFormData() {
-   		 let formData = JSON.parse(localStorage.getItem('pedidoData'));
-    	if (formData) {
-        document.querySelector('[name="nombre"]').value = formData.nombre || '';
-        document.querySelector('[name="apellidos"]').value = formData.apellidos || '';
-        document.querySelector('[name="email"]').value = formData.email || '';
-        document.querySelector('[name="nºTelefono"]').value = formData.telefono || '';
-        document.querySelector('[name="dirección de envio"]').value = formData.direccion || '';
-        document.querySelector('[name="localidad"]').value = formData.localidad || '';
-        document.querySelector('[name="codigo postal"]').value = formData.codigoPostal || '';
-        document.querySelector('[name="probincia"]').value = formData.provincia || '';
-   		}
-		}
+    <script>
+      // Guardar los datos del usuario en localStorage
+      function saveUserData() {
+        let userData = {
+          nombre: document.getElementById('nombre').value,
+          apellidos: document.getElementById('apellidos').value,
+          email: document.getElementById('email').value,
+          telefono: document.getElementById('telefono').value,
+          direccion: document.getElementById('direccion').value,
+          localidad: document.getElementById('localidad').value,
+          codigo_postal: document.getElementById('codigo_postal').value,
+          provincia: document.getElementById('provincia').value
+        };
 
-		window.onload = loadFormData;  // Cargar los datos al cargar la página
+        // Guardar los datos del usuario en localStorage
+        localStorage.setItem('userData', JSON.stringify(userData));
 
-		function validateForm() {
-    // Validar campos...
-    saveFormData();  // Guardar los datos antes de ir al siguiente paso
-    window.location.href= "pedido2.html"; // Redirigir
-	}
-		</script>
-	</body>
+        // Redirigir a pedido2.html
+        window.location.href = "pedido2.html";
+      }
+    </script>
+  </body>
 </html>
