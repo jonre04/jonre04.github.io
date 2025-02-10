@@ -203,10 +203,61 @@ footer {
         grid-template: repeat(10, auto) / 1fr;
     }
 
-    #catalogo1, #catalogo2, #catalogo3, #catalogo4, #catalogo5, #catalogo6,
-    #catalogo7, #catalogo8, #catalogo9, #catalogo10, #catalogo11, #catalogo12,
-    #catalogo13, #catalogo14 {
-        grid-column: 1/2; /* All items will take up the full width on small screens */
+    #catalogo1 {
+        grid-row: 1/2;
+        grid-column: 1/2;
+    }
+    #catalogo2 {
+        grid-row: 2/3;
+        grid-column: 1/2
+    }
+    #catalogo3 {
+        grid-row: 3/4;
+        grid-column: 1/2;
+    }
+    #catalogo4 {
+        grid-row: 4/5;
+        grid-column: 1/2;
+    }
+    #catalogo5 {
+        grid-row: 5/6;
+        grid-column: 1/2
+    }
+    #catalogo6 {
+        grid-row: 6/7;
+        grid-column: 1/2;
+    }
+    #catalogo7 {
+        grid-row: 7/8;
+        grid-column: 1/2;
+    }
+    #catalogo8 {
+        grid-row: 8/9;
+        grid-column: 1/2
+    }
+    #catalogo9 {
+        grid-row: 9/10;
+        grid-column: 1/2;
+    }
+    #catalogo10 {
+        grid-row: 10/11;
+        grid-column: 1/2;
+    }
+    #catalogo11 {
+        grid-row: 11/12;
+        grid-column: 1/2
+    }
+    #catalogo12 {
+        grid-row: 12/13;
+        grid-column: 1/2;
+    }
+    #catalogo13 {
+        grid-row: 13/14;
+        grid-column: 1/2
+    }
+    #catalogo14 {
+        grid-row: 14/15;
+        grid-column: 1/2;
     }
 }
 
